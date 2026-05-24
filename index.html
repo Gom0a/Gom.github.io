@@ -20,6 +20,8 @@
     @font-face {
       font-family: 'Paperlogy';
       src: url('Paperlogy-4Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -132,24 +134,24 @@
 
     /* 메인 타이틀 */
     .hero-title {
-      line-height: 1.1;
+      line-height: 1.05;
       color: #222;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
     .hero-title .line1 {
       display: block;
       font-family: 'Epilogue', sans-serif;
-      font-size: clamp(3.2rem, 10vw, 8rem);
+      font-size: clamp(4.5rem, 13vw, 11rem);
       letter-spacing: -2px;
-      background: linear-gradient(transparent 55%, #ffd7dd 55%);
-      padding-bottom: 3px;
+      background: linear-gradient(transparent 52%, #ffd7dd 52%, #ffd7dd 95%, transparent 95%);
+      padding: 0 8px;
     }
 
     .hero-title .line2 {
       display: inline-block;
       font-family: 'Fontspring', serif;
-      font-size: clamp(3.2rem, 10vw, 8rem);
+      font-size: clamp(4.5rem, 13vw, 11rem);
       color: #222;
       letter-spacing: 2px;
       font-weight: 300;
@@ -161,6 +163,7 @@
       gap: 16px;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 40px;
     }
 
     .btn {
@@ -191,7 +194,6 @@
 
     /* 스크롤 힌트 */
     .scroll-hint {
-      margin-top: 52px;
       font-size: 0.8rem;
       color: #888;
       letter-spacing: 1px;
