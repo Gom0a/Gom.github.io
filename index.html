@@ -244,13 +244,13 @@
     }
 
     /* ── WORKS 섹션 ── */
-.works {
-  padding-top: 200px;
-  padding-bottom: 80px;
-  padding-left: 48px;
-  padding-right: 48px;
-  text-align: center;
-}
+    .works {
+      padding-top: 200px;
+      padding-bottom: 80px;
+      padding-left: 48px;
+      padding-right: 48px;
+      text-align: center;
+    }
 
     .works-welcome {
       font-family: 'PaperlогySemiBold', sans-serif;
@@ -279,7 +279,7 @@
 
     .carousel-wrapper {
       display: flex;
-      align-items: center;
+      align-items: flex-end; /* ← 탭 때문에 아래 기준 정렬 */
       gap: 20px;
       justify-content: center;
     }
@@ -295,18 +295,41 @@
       gap: 24px;
       transition: transform 0.4s ease;
       will-change: transform;
+      align-items: flex-end; /* ← 탭 높이 달라도 아래 기준으로 맞춰짐 */
     }
 
+    /* ── 파일 폴더 카드 ── */
     .card {
       min-width: 500px;
-      border-radius: 16px;
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 탭 부분 */
+    .card-tab {
+      width: 42%;
+      height: 30px;
+      background: color-mix(in srgb, var(--card-color) 55%, white 45%);
+      border-radius: 14px 14px 0 0;
+      border: 2px solid #222;
+      border-bottom: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 본체 */
+    .card-body-wrap {
+      border-radius: 0 18px 18px 18px;
       border: 2px solid #222;
       overflow: hidden;
       background: #fff;
-      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
     }
 
-    .card img {
+    .card-body-wrap img {
       width: 100%;
       height: 300px;
       object-fit: cover;
@@ -371,6 +394,7 @@
       cursor: pointer;
       flex-shrink: 0;
       transition: background 0.2s;
+      margin-bottom: 30px; /* ← 탭 높이만큼 버튼 위치 살짝 올려줌 */
     }
 
     .carousel-btn:hover { background: #f5f5f5; }
@@ -431,98 +455,122 @@
         <div class="carousel-track" id="carouselTrack">
 
           <div class="card" style="--card-color: #ffa8a8;">
-            <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank">
-              <img src="https://img.youtube.com/vi/D0BetwBIgXc/maxresdefault.jpg" alt="버츄얼 저스트채팅 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#저스트 채팅</p>
-              <p class="card-views">👁 2만회</p>
-              <p class="card-title">명절에 찾아온 깜짝손님?!</p>
-              <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank" class="card-channel">위도 W2RDØ</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank">
+                <img src="https://img.youtube.com/vi/D0BetwBIgXc/maxresdefault.jpg" alt="버츄얼 저스트채팅 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#저스트 채팅</p>
+                <p class="card-views">👁 2만회</p>
+                <p class="card-title">명절에 찾아온 깜짝손님?!</p>
+                <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank" class="card-channel">위도 W2RDØ</a>
+              </div>
             </div>
           </div>
 
           <div class="card" style="--card-color: #fff0a8;">
-            <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank">
-              <img src="https://img.youtube.com/vi/k-bZ1K3otFA/maxresdefault.jpg" alt="버츄얼 다인합방 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#다인합방</p>
-              <p class="card-views">👁 1.3만회</p>
-              <p class="card-title">내가 라인 원툴이라고?! 「오버워치」</p>
-              <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank" class="card-channel">클로이 chlo2</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank">
+                <img src="https://img.youtube.com/vi/k-bZ1K3otFA/maxresdefault.jpg" alt="버츄얼 다인합방 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#다인합방</p>
+                <p class="card-views">👁 1.3만회</p>
+                <p class="card-title">내가 라인 원툴이라고?! 「오버워치」</p>
+                <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank" class="card-channel">클로이 chlo2</a>
+              </div>
             </div>
           </div>
 
           <div class="card" style="--card-color: #c8e488;">
-            <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank">
-              <img src="https://img.youtube.com/vi/ty8KTgeQzcU/maxresdefault.jpg" alt="게임 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#게임</p>
-              <p class="card-views">👁 55만회</p>
-              <p class="card-title">배그 1티어 무기 '역대급 베릴 무반동 세팅법'</p>
-              <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank" class="card-channel">김블루</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank">
+                <img src="https://img.youtube.com/vi/ty8KTgeQzcU/maxresdefault.jpg" alt="게임 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#게임</p>
+                <p class="card-views">👁 55만회</p>
+                <p class="card-title">배그 1티어 무기 '역대급 베릴 무반동 세팅법'</p>
+                <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank" class="card-channel">김블루</a>
+              </div>
             </div>
           </div>
 
           <div class="card" style="--card-color: #a8dcff;">
-            <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank">
-              <img src="https://img.youtube.com/vi/KDm95KaLxQM/maxresdefault.jpg" alt="뷰티 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#뷰티</p>
-              <p class="card-views">👁 5.7천회</p>
-              <p class="card-title">완판❗️피부탄력, 셀룰라이트, 승모근 고민이신 분들 필독</p>
-              <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank" class="card-channel">율럽Yulluv</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank">
+                <img src="https://img.youtube.com/vi/KDm95KaLxQM/maxresdefault.jpg" alt="뷰티 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#뷰티</p>
+                <p class="card-views">👁 5.7천회</p>
+                <p class="card-title">완판❗️피부탄력, 셀룰라이트, 승모근 고민이신 분들 필독</p>
+                <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank" class="card-channel">율럽Yulluv</a>
+              </div>
             </div>
           </div>
 
           <div class="card" style="--card-color: #ffbce3;">
-            <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank">
-              <img src="https://img.youtube.com/vi/GeEd5AlVh4g/maxresdefault.jpg" alt="브이로그 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#브이로그</p>
-              <p class="card-views">👁 1.6만회</p>
-              <p class="card-title">셀린느 장인 영접❗️명품백 플리마켓 준비, 이사, 언박싱, 미팅룩 VLOG</p>
-              <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank" class="card-channel">율럽Yulluv</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank">
+                <img src="https://img.youtube.com/vi/GeEd5AlVh4g/maxresdefault.jpg" alt="브이로그 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#브이로그</p>
+                <p class="card-views">👁 1.6만회</p>
+                <p class="card-title">셀린느 장인 영접❗️명품백 플리마켓 준비, 이사, 언박싱, 미팅룩 VLOG</p>
+                <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank" class="card-channel">율럽Yulluv</a>
+              </div>
             </div>
           </div>
 
           <div class="card" style="--card-color: #ffa8a8;">
-            <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank">
-              <img src="https://img.youtube.com/vi/49UXx1JLTgk/maxresdefault.jpg" alt="병원 영상 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#병원 영상</p>
-              <p class="card-views">👁 183회</p>
-              <p class="card-title">필러 부작용? 안 맞는 얼굴이 따로 있습니다</p>
-              <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank" class="card-channel">벨포인트의원</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank">
+                <img src="https://img.youtube.com/vi/49UXx1JLTgk/maxresdefault.jpg" alt="병원 영상 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#병원 영상</p>
+                <p class="card-views">👁 183회</p>
+                <p class="card-title">필러 부작용? 안 맞는 얼굴이 따로 있습니다</p>
+                <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank" class="card-channel">벨포인트의원</a>
+              </div>
             </div>
           </div>
 
           <div class="card" style="--card-color: #fff0a8;">
-            <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank">
-              <img src="https://img.youtube.com/vi/T2DrU-Edbxo/maxresdefault.jpg" alt="정보성 영상 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#정보성 영상</p>
-              <p class="card-views">👁 28만회</p>
-              <p class="card-title">신형 쏘렌토 하이브리드 꼭 필요한 옵션!!!</p>
-              <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank" class="card-channel">원더굿라이프</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank">
+                <img src="https://img.youtube.com/vi/T2DrU-Edbxo/maxresdefault.jpg" alt="정보성 영상 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#정보성 영상</p>
+                <p class="card-views">👁 28만회</p>
+                <p class="card-title">신형 쏘렌토 하이브리드 꼭 필요한 옵션!!!</p>
+                <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank" class="card-channel">원더굿라이프</a>
+              </div>
             </div>
           </div>
 
           <div class="card" style="--card-color: #c8e488;">
-            <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank">
-              <img src="https://img.youtube.com/vi/qtDHUvDpgzI/maxresdefault.jpg" alt="상업 영상 썸네일">
-            </a>
-            <div class="card-body">
-              <p class="card-tag">#상업 영상</p>
-              <p class="card-views">👁 5.2만회</p>
-              <p class="card-title">지기가 환장한 택배 순대국밥 치팅먹방.mov</p>
-              <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank" class="card-channel">이게오네</a>
+            <div class="card-tab"></div>
+            <div class="card-body-wrap">
+              <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank">
+                <img src="https://img.youtube.com/vi/qtDHUvDpgzI/maxresdefault.jpg" alt="상업 영상 썸네일">
+              </a>
+              <div class="card-body">
+                <p class="card-tag">#상업 영상</p>
+                <p class="card-views">👁 5.2만회</p>
+                <p class="card-title">지기가 환장한 택배 순대국밥 치팅먹방.mov</p>
+                <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank" class="card-channel">이게오네</a>
+              </div>
             </div>
           </div>
 
@@ -538,25 +586,20 @@
     const CARD_WIDTH = 500;
     const STEP = CARD_WIDTH + GAP;
 
-    // 원본 카드 저장
     const originalCards = Array.from(track.children);
     const total = originalCards.length;
 
-    // 뒤에 복제본 1세트 추가
     originalCards.forEach(card => {
       track.appendChild(card.cloneNode(true));
     });
 
-    // 앞에 복제본 1세트 추가
     originalCards.forEach(card => {
       track.insertBefore(card.cloneNode(true), track.firstChild);
     });
 
-// 시작 위치 = 원본 두 번째 카드부터 시작
-let currentIndex = total;
-track.style.transition = 'none';
-track.style.transform = `translateX(-${currentIndex * STEP}px)`;
-
+    let currentIndex = total;
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${currentIndex * STEP}px)`;
 
     function moveCarousel(dir) {
       currentIndex += dir;
@@ -566,14 +609,12 @@ track.style.transform = `translateX(-${currentIndex * STEP}px)`;
       track.addEventListener('transitionend', function onEnd() {
         track.removeEventListener('transitionend', onEnd);
 
-        // 오른쪽 끝 초과 → 원본 시작으로 점프
         if (currentIndex >= total * 2) {
           currentIndex = total;
           track.style.transition = 'none';
           track.style.transform = `translateX(-${currentIndex * STEP}px)`;
         }
 
-        // 왼쪽 끝 초과 → 원본 마지막으로 점프
         if (currentIndex < total) {
           currentIndex = total * 2 - 1;
           track.style.transition = 'none';
