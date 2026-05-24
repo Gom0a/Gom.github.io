@@ -390,12 +390,12 @@
       justify-content: center;
     }
 
-    /* 흰색 오버레이 */
-    .about-overlay {
+    /* 콜라주 위 살짝 어두운 딤처리 */
+    .about-collage::before {
+      content: '';
       position: absolute;
       inset: 0;
-      background: #ffffff;
-      opacity: 0;
+      background: rgba(0, 0, 0, 0.35);
       z-index: 1;
     }
 
@@ -418,22 +418,32 @@
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 6px;
-      color: #888;
+      color: rgba(255,255,255,0.7);
       margin-bottom: 20px;
     }
     .about-title {
       font-family: 'PaperlogyBold', sans-serif;
       font-size: clamp(2.5rem, 6vw, 5rem);
-      color: #222;
+      color: #ffffff;
       line-height: 1.2;
       margin-bottom: 28px;
     }
     .about-desc {
       font-family: 'Paperlogy', sans-serif;
       font-size: 1.15rem;
-      color: #444;
+      color: rgba(255,255,255,0.85);
       line-height: 1.9;
       margin-bottom: 40px;
+    }
+    .about-content .btn {
+      background: #ffffff;
+      color: #222;
+      border-color: #ffffff;
+      display: inline-flex;
+      margin: 0 auto;
+    }
+    .about-content .btn:hover {
+      background: rgba(255,255,255,0.85);
     }
 
   </style>
@@ -602,12 +612,8 @@
 
   <!-- ABOUT -->
   <section class="about">
-    <!-- 위에서 내려오는 흰색 그라데이션 -->
     <div class="about-fade-top"></div>
-
-    <!-- 콜라주 배경 + 오버레이 + 텍스트 -->
     <div class="about-collage">
-      <div class="about-overlay" id="aboutOverlay"></div>
       <div class="about-content" id="aboutContent">
         <p class="about-label">ABOUT</p>
         <h2 class="about-title">곰이 편집하면<br>달라집니다</h2>
@@ -616,7 +622,7 @@
           크리에이터의 순간을 가장 감각적으로 담는<br>
           영상 편집자 Gom입니다.
         </p>
-        <a href="#" class="btn" style="display:inline-flex; margin: 0 auto;">
+        <a href="#" class="btn about-btn">
           <span class="dot"></span>작업 문의하기
         </a>
       </div>
@@ -660,40 +666,21 @@
       });
     }
 
- /* ── ABOUT 스크롤 효과 ── */
-const aboutCollage  = document.querySelector('.about-collage');
-const aboutOverlay  = document.getElementById('aboutOverlay');
-const aboutContent  = document.getElementById('aboutContent');
+    /* ── ABOUT 스크롤 효과 ── */
+    const aboutCollage = document.querySelector('.about-collage');
+    const aboutContent = document.getElementById('aboutContent');
 
-window.addEventListener('scroll', () => {
-  if (!aboutCollage) return;
+    window.addEventListener('scroll', () => {
+      if (!aboutCollage) return;
+      const rect = aboutCollage.getBoundingClientRect();
+      const wh = window.innerHeight;
 
-  const rect = aboutCollage.getBoundingClientRect();
-  const wh   = window.innerHeight;
-
-  if (rect.top < wh && rect.bottom > 0) {
-    // 섹션이 화면 절반 넘어갈 때부터 오버레이 시작
-    const scrolled = wh - rect.top;
-    const total    = rect.height;
-
-    // 0 ~ 1 (후반부에만 짙어지도록 조정)
-    const progress = Math.min(Math.max((scrolled - total * 0.3) / (total * 0.5), 0), 1);
-
-    aboutOverlay.style.opacity = progress;
-
-    // 오버레이 70% 이상일 때 텍스트 등장
-    if (progress > 0.7) {
-      aboutContent.classList.add('visible');
-    } else {
-      aboutContent.classList.remove('visible');
-    }
-  } else {
-    // 섹션 밖이면 초기화
-    aboutOverlay.style.opacity = 0;
-    aboutContent.classList.remove('visible');
-  }
-});
-
+      if (rect.top < wh * 0.6) {
+        aboutContent.classList.add('visible');
+      } else {
+        aboutContent.classList.remove('visible');
+      }
+    });
   </script>
 
 </body>
