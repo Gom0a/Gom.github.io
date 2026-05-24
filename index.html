@@ -24,18 +24,17 @@
       font-style: normal;
     }
     @font-face {
-  font-family: 'PaperlogyLight';
-  src: url('Paperlogy-3Light.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'PaperlогySemiBold';
-  src: url('Paperlogy-6SemiBold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'PaperlogyBold';
-  src: url('Paperlogy-7Bold.ttf') format('truetype');
-}
-
+      font-family: 'PaperlogyLight';
+      src: url('Paperlogy-3Light.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'PaperlогySemiBold';
+      src: url('Paperlogy-6SemiBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'PaperlogyBold';
+      src: url('Paperlogy-7Bold.ttf') format('truetype');
+    }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -224,12 +223,11 @@
       padding: 12px 0;
       overflow: hidden;
       white-space: nowrap;
-      margin-top: 100vh;
     }
 
     .ticker-track {
       display: inline-flex;
-      animation: ticker 20s linear infinite;
+      animation: ticker 25s linear infinite;
     }
 
     .ticker-track span {
@@ -253,27 +251,27 @@
 
     .works-welcome {
       font-family: 'PaperlogyLight', sans-serif;
-      font-size: 0.85rem;
+      font-size: 1rem;
       letter-spacing: 2px;
       color: #888;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .works-title {
       font-family: 'PaperlogyBold', sans-serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 700;
       color: #222;
       line-height: 1.4;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .works-desc {
-      font-family: 'Paperlogy', sans-serif;
-      font-size: 1rem;
+      font-family: 'PaperlогySemiBold', sans-serif;
+      font-size: 1.15rem;
       color: #555;
       line-height: 1.7;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
 
     .carousel-wrapper {
@@ -293,6 +291,7 @@
       display: flex;
       gap: 24px;
       transition: transform 0.4s ease;
+      will-change: transform;
     }
 
     .card {
@@ -318,8 +317,8 @@
     }
 
     .card-tag {
-      font-family: 'Paperlogy', sans-serif;
-      font-size: 1.1rem;
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #222;
       margin-bottom: 8px;
@@ -327,14 +326,14 @@
 
     .card-views {
       font-family: 'Paperlogy', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #444;
       margin-bottom: 6px;
     }
 
     .card-title {
       font-family: 'Paperlogy', sans-serif;
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #222;
       line-height: 1.5;
       margin-bottom: 16px;
@@ -347,7 +346,7 @@
     .card-channel {
       display: inline-block;
       font-family: 'Paperlogy', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #222;
       background: #fff;
@@ -363,9 +362,9 @@
       background: #fff;
       border: 2px solid #222;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 1.3rem;
+      width: 52px;
+      height: 52px;
+      font-size: 1.4rem;
       cursor: pointer;
       flex-shrink: 0;
       transition: background 0.2s;
@@ -532,51 +531,49 @@
 
   <script>
     const track = document.getElementById('carouselTrack');
-    const cardWidth = 444; // 카드 320px + gap 24px
-    const visibleCount = 3;
+    const GAP = 24;
+    const CARD_WIDTH = 420;
+    const STEP = CARD_WIDTH + GAP;
 
-    // 원본 카드 복제해서 앞뒤로 붙이기 (무한 루프용)
+    // 원본 카드 저장
     const originalCards = Array.from(track.children);
-    const totalOriginal = originalCards.length;
+    const total = originalCards.length;
 
-    // 앞에 복제본 붙이기
+    // 뒤에 복제본 1세트 추가
     originalCards.forEach(card => {
-      const clone = card.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.appendChild(clone);
+      track.appendChild(card.cloneNode(true));
     });
 
+    // 앞에 복제본 1세트 추가
     originalCards.forEach(card => {
-      const clone = card.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.insertBefore(clone, track.firstChild);
+      track.insertBefore(card.cloneNode(true), track.firstChild);
     });
 
-    // 시작 위치를 복제본 다음 (원본 첫 번째)으로 설정
-    let currentIndex = totalOriginal;
+    // 시작 위치 = 앞 복제본 다음 (원본 첫 번째)
+    let currentIndex = total;
     track.style.transition = 'none';
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    track.style.transform = `translateX(-${currentIndex * STEP}px)`;
 
     function moveCarousel(dir) {
       currentIndex += dir;
       track.style.transition = 'transform 0.4s ease';
-      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      track.style.transform = `translateX(-${currentIndex * STEP}px)`;
 
-      track.addEventListener('transitionend', function handler() {
-        track.removeEventListener('transitionend', handler);
+      track.addEventListener('transitionend', function onEnd() {
+        track.removeEventListener('transitionend', onEnd);
 
-        // 끝에 도달하면 조용히 원본 위치로 점프
-        if (currentIndex >= totalOriginal * 2) {
-          currentIndex = totalOriginal;
+        // 오른쪽 끝 초과 → 원본 시작으로 점프
+        if (currentIndex >= total * 2) {
+          currentIndex = total;
           track.style.transition = 'none';
-          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+          track.style.transform = `translateX(-${currentIndex * STEP}px)`;
         }
 
-        // 처음보다 앞으로 가면 원본 마지막 위치로 점프
-        if (currentIndex < totalOriginal) {
-          currentIndex = totalOriginal * 2 - 1;
+        // 왼쪽 끝 초과 → 원본 마지막으로 점프
+        if (currentIndex < total) {
+          currentIndex = total * 2 - 1;
           track.style.transition = 'none';
-          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+          track.style.transform = `translateX(-${currentIndex * STEP}px)`;
         }
       });
     }
