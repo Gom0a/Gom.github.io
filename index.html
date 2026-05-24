@@ -660,35 +660,40 @@
       });
     }
 
-    /* ── ABOUT 스크롤 효과 ── */
-    const aboutCollage  = document.querySelector('.about-collage');
-    const aboutOverlay  = document.getElementById('aboutOverlay');
-    const aboutContent  = document.getElementById('aboutContent');
+ /* ── ABOUT 스크롤 효과 ── */
+const aboutCollage  = document.querySelector('.about-collage');
+const aboutOverlay  = document.getElementById('aboutOverlay');
+const aboutContent  = document.getElementById('aboutContent');
 
-    window.addEventListener('scroll', () => {
-      if (!aboutCollage) return;
+window.addEventListener('scroll', () => {
+  if (!aboutCollage) return;
 
-      const rect = aboutCollage.getBoundingClientRect();
-      const wh   = window.innerHeight;
+  const rect = aboutCollage.getBoundingClientRect();
+  const wh   = window.innerHeight;
 
-      if (rect.top < wh && rect.bottom > 0) {
-        // 0: 콜라주 화면 진입 시작 / 1: 콜라주 화면 통과 완료
-        const progress = Math.min(
-          Math.max((wh - rect.top) / (wh + rect.height), 0),
-          1
-        );
+  if (rect.top < wh && rect.bottom > 0) {
+    // 섹션이 화면 절반 넘어갈 때부터 오버레이 시작
+    const scrolled = wh - rect.top;
+    const total    = rect.height;
 
-        // 오버레이: 서서히 흰색으로 (0 → 1)
-        aboutOverlay.style.opacity = progress;
+    // 0 ~ 1 (후반부에만 짙어지도록 조정)
+    const progress = Math.min(Math.max((scrolled - total * 0.3) / (total * 0.5), 0), 1);
 
-        // 60% 넘으면 텍스트 등장
-        if (progress > 0.6) {
-          aboutContent.classList.add('visible');
-        } else {
-          aboutContent.classList.remove('visible');
-        }
-      }
-    });
+    aboutOverlay.style.opacity = progress;
+
+    // 오버레이 70% 이상일 때 텍스트 등장
+    if (progress > 0.7) {
+      aboutContent.classList.add('visible');
+    } else {
+      aboutContent.classList.remove('visible');
+    }
+  } else {
+    // 섹션 밖이면 초기화
+    aboutOverlay.style.opacity = 0;
+    aboutContent.classList.remove('visible');
+  }
+});
+
   </script>
 
 </body>
