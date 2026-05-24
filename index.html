@@ -108,14 +108,11 @@
       0%, 100% { transform: translateY(0px) rotate(-3deg); }
       50%       { transform: translateY(-14px) rotate(3deg); }
     }
-
     .hero-title {
       line-height: 0.90;
       color: #2c2b2b;
       margin-bottom: 40px;
     }
-
-    /* ── LINE1 형광펜 효과 ── */
     .hero-title .line1 {
       display: inline-block;
       position: relative;
@@ -138,32 +135,25 @@
     .line1-bar-left {
       position: absolute;
       left: 0; top: 10%; bottom: 23%;
-      width: 5px;
-      background: #FFBC30;
-      border-radius: 4px;
+      width: 5px; background: #FFBC30; border-radius: 4px;
     }
     .line1-bar-right {
       position: absolute;
       right: 0; top: 10%; bottom: 22%;
-      width: 5px;
-      background: #FFBC30;
-      border-radius: 4px;
+      width: 5px; background: #FFBC30; border-radius: 4px;
     }
     .line1-dot-tl {
       position: absolute;
       left: -5px; top: 3%;
       width: 16px; height: 16px;
-      background: #FFBC30;
-      border-radius: 50%;
+      background: #FFBC30; border-radius: 50%;
     }
     .line1-dot-br {
       position: absolute;
       right: -5px; bottom: 15%;
       width: 16px; height: 16px;
-      background: #FFBC30;
-      border-radius: 50%;
+      background: #FFBC30; border-radius: 50%;
     }
-
     .hero-title .line2 {
       display: inline-block;
       font-family: 'Fontspring';
@@ -173,7 +163,6 @@
       font-weight: 500;
       word-spacing: -10px;
     }
-
     .hero-buttons {
       display: flex;
       gap: 16px;
@@ -202,7 +191,6 @@
       width: 1rem; height: 1rem; min-width: 1rem;
       background: #FEF0C7; border-radius: 50%; display: inline-block;
     }
-
     .scroll-hint {
       font-size: 0.8rem;
       color: #888;
@@ -364,8 +352,6 @@
       position: relative;
       width: 100%;
     }
-
-    /* 위에서 내려오는 흰색 그라데이션 */
     .about-fade-top {
       position: relative;
       width: 100%;
@@ -375,8 +361,6 @@
       margin-bottom: -300px;
       pointer-events: none;
     }
-
-    /* 콜라주 배경 */
     .about-collage {
       position: relative;
       width: 100%;
@@ -389,8 +373,6 @@
       align-items: center;
       justify-content: center;
     }
-
-    /* 콜라주 위 살짝 어두운 딤처리 */
     .about-collage::before {
       content: '';
       position: absolute;
@@ -398,8 +380,6 @@
       background: rgba(0, 0, 0, 0.35);
       z-index: 1;
     }
-
-    /* 텍스트 영역 */
     .about-content {
       position: relative;
       z-index: 2;
@@ -442,8 +422,108 @@
       display: inline-flex;
       margin: 0 auto;
     }
-    .about-content .btn:hover {
-      background: rgba(255,255,255,0.85);
+    .about-content .btn:hover { background: rgba(255,255,255,0.85); }
+
+    /* ── VOICE 섹션 (카드 4개) ── */
+    .voice {
+      padding: 120px 48px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    .voice-label {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    .voice-title {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: #222;
+      line-height: 1.5;
+      margin-bottom: 64px;
+    }
+    .voice-title strong {
+      font-family: 'PaperlogyBold', sans-serif;
+      color: #222;
+    }
+
+    /* 카드 그리드 */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* 개별 카드 */
+    .voice-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px;
+      text-align: left;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+
+    /* 상단: 아이콘 + 말풍선 */
+    .voice-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .voice-card-top img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* 말풍선 */
+    .voice-bubble {
+      position: relative;
+      background: #f3f3f3;
+      border-radius: 0 16px 16px 16px;
+      padding: 14px 18px;
+      flex: 1;
+    }
+    .voice-bubble::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 14px;
+      border-width: 6px 10px 6px 0;
+      border-style: solid;
+      border-color: transparent #f3f3f3 transparent transparent;
+    }
+    .voice-bubble-text {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: 1.05rem;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    /* 이름 + 정보 */
+    .voice-card-info {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.82rem;
+      color: #999;
+      margin-bottom: 16px;
+      padding-left: 80px; /* 아이콘 너비만큼 들여쓰기 */
+    }
+
+    /* 본문 */
+    .voice-card-body {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.85;
+      border-top: 1px solid #eeeeee;
+      padding-top: 16px;
     }
 
   </style>
@@ -466,7 +546,6 @@
     <span class="sticker s1">🎥</span>
     <span class="sticker s2">💬</span>
     <span class="sticker s3">🖥️</span>
-
     <h1 class="hero-title">
       <span class="line1">
         <span class="line1-bar-left"></span>
@@ -478,12 +557,10 @@
       <br>
       <span class="line2">for every creator</span>
     </h1>
-
     <div class="hero-buttons">
       <a href="#" class="btn"><span class="dot"></span>작업물 보기</a>
       <a href="#" class="btn"><span class="dot"></span>문의하기</a>
     </div>
-
     <div class="scroll-hint">↓ scroll down ↓</div>
   </section>
 
@@ -502,7 +579,6 @@
       <h2 class="works-title">영상이 막막하고, 편집이 어렵고,<br>결과물이 걱정되는 크리에이터를 위해</h2>
       <p class="works-desc">버츄얼, 스트리머부터 뷰티, 브이로그, 정보성, 예능 영상까지<br>크리에이터의 순간을 감각적인 영상으로 담아드립니다!</p>
     </div>
-
     <div class="carousel-wrapper">
       <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8592;</button>
       <div class="carousel-track-container">
@@ -629,6 +705,79 @@
     </div>
   </section>
 
+  <!-- VOICE (고민 카드 4개) -->
+  <section class="voice">
+    <p class="voice-label">User Research</p>
+    <h2 class="voice-title">
+      편집을 맡기기 전,<br>
+      <strong>크리에이터들이 가장 많이 하는 고민</strong>을 들어봤어요.
+    </h2>
+
+    <div class="voice-grid">
+
+      <!-- 카드 1 -->
+      <div class="voice-card">
+        <div class="voice-card-top">
+          <img src="face1.png" alt="린린">
+          <div class="voice-bubble">
+            <p class="voice-bubble-text">어떤 편집 스타일로 맡겨야 할지 모르겠어요.</p>
+          </div>
+        </div>
+        <p class="voice-card-info">린린 · 유튜브 운영 1년 차</p>
+        <p class="voice-card-body">
+          레퍼런스를 찾아봐도 내 채널이랑 맞는 스타일인지 확신이 없고,
+          편집자한테 어떻게 설명해야 할지 막막했어요.
+        </p>
+      </div>
+
+      <!-- 카드 2 -->
+      <div class="voice-card">
+        <div class="voice-card-top">
+          <img src="face2.png" alt="해키">
+          <div class="voice-bubble">
+            <p class="voice-bubble-text">편집 맡기고 싶은데 믿을 수 있을지 걱정돼요.</p>
+          </div>
+        </div>
+        <p class="voice-card-info">해키 · 유튜브 운영 3년 차</p>
+        <p class="voice-card-body">
+          퀄리티가 기대에 못 미치거나 수정이 너무 많아질까봐
+          선뜻 편집을 맡기지 못하고 혼자 다 하고 있었어요.
+        </p>
+      </div>
+
+      <!-- 카드 3 -->
+      <div class="voice-card">
+        <div class="voice-card-top">
+          <img src="face3.png" alt="지니">
+          <div class="voice-bubble">
+            <p class="voice-bubble-text">내 채널 분위기를 잘 살려줄 수 있을지 몰랐어요.</p>
+          </div>
+        </div>
+        <p class="voice-card-info">지니 · 버츄얼 스트리머</p>
+        <p class="voice-card-body">
+          내 캐릭터나 채널 색깔이 강한 편이라
+          편집자가 그 느낌을 제대로 잡아줄 수 있을지 늘 걱정이었어요.
+        </p>
+      </div>
+
+      <!-- 카드 4 -->
+      <div class="voice-card">
+        <div class="voice-card-top">
+          <img src="face4.png" alt="세이">
+          <div class="voice-bubble">
+            <p class="voice-bubble-text">소통이 잘 될지 불안했어요.</p>
+          </div>
+        </div>
+        <p class="voice-card-info">세이 · 뷰티 유튜버</p>
+        <p class="voice-card-body">
+          수정 요청을 해도 제대로 반영이 안 되거나
+          커뮤니케이션이 어려울 것 같아서 망설였어요.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
   <script>
     /* ── 캐러셀 ── */
     const track = document.getElementById('carouselTrack');
@@ -650,7 +799,6 @@
       currentIndex += dir;
       track.style.transition = 'transform 0.4s ease';
       track.style.transform = `translateX(-${currentIndex * STEP}px)`;
-
       track.addEventListener('transitionend', function onEnd() {
         track.removeEventListener('transitionend', onEnd);
         if (currentIndex >= total * 2) {
@@ -674,7 +822,6 @@
       if (!aboutCollage) return;
       const rect = aboutCollage.getBoundingClientRect();
       const wh = window.innerHeight;
-
       if (rect.top < wh * 0.6) {
         aboutContent.classList.add('visible');
       } else {
