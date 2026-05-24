@@ -249,26 +249,34 @@
       letter-spacing: 8px; color: #555;
       margin-bottom: 32px; text-transform: uppercase;
     }
-   .about-stats {
+.about-stats {
   display: flex;
   justify-content: center;
-  align-items: flex-start;   /* 추가 */
-  gap: 0;                    /* gap 제거 */
+  align-items: flex-start;
+  gap: 0;
   margin-bottom: 32px;
-  width: 100%;               /* 추가 */
+  width: 100%;
 }
 .about-stat {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  flex: 1;                   /* 추가 - 세 칸 균등 분배 */
+  flex: 1;
+}
+.about-stat-num {
+  font-family: 'PaperlogyBold', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);  /* 이 줄이 핵심 */
+  color: #0f78f5;
+  line-height: 1;
+}
+.about-stat-label {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 0.82rem;
+  color: #444;
+  letter-spacing: 1px;
 }
 
-    .about-stat-label {
-      font-family: 'Paperlogy', sans-serif;
-      font-size: 0.82rem; color: #444; letter-spacing: 1px;
-    }
     .about-divider {
       width: 48px; height: 2px;
       background: rgba(0,0,0,0.15);
