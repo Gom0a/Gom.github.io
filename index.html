@@ -99,7 +99,7 @@
       font-size: 4rem;
       animation: float 3.5s ease-in-out infinite;
       user-select: none;
-        z-index: 10;
+      z-index: 10;
     }
     .s1 { top: 28%; left: 37%; animation-delay: 0s; }
     .s2 { top: 29%; right: 35%; animation-delay: 0.6s; }
@@ -127,59 +127,39 @@
       margin: 0 -32px;
       z-index: 0;
     }
-
-    /* 노란 하이라이트 배경 */
     .hero-title .line1::before {
       content: '';
       position: absolute;
-      left: 0;
-      right: 0;
-      top: 10%;
-      bottom: 25%;
+      left: 0; right: 0;
+      top: 10%; bottom: 25%;
       background: #FEF0C7;
       z-index: -1;
     }
-
-    /* 왼쪽 상단 세로선 */
     .line1-bar-left {
       position: absolute;
-      left: 0;
-      top: 10%;
-      bottom: 23%;
+      left: 0; top: 10%; bottom: 23%;
       width: 5px;
       background: #FFBC30;
       border-radius: 4px;
     }
-
-    /* 오른쪽 하단 세로선 */
     .line1-bar-right {
       position: absolute;
-      right: 0;
-      top: 10%;
-      bottom: 22%;
+      right: 0; top: 10%; bottom: 22%;
       width: 5px;
       background: #FFBC30;
       border-radius: 4px;
     }
-
-    /* 왼쪽 상단 점 */
     .line1-dot-tl {
       position: absolute;
-      left: -5px;
-      top: 3%;
-      width: 16px;
-      height: 16px;
+      left: -5px; top: 3%;
+      width: 16px; height: 16px;
       background: #FFBC30;
       border-radius: 50%;
     }
-
-    /* 오른쪽 하단 점 */
     .line1-dot-br {
       position: absolute;
-      right: -5px;
-      bottom: 15%;
-      width: 16px;
-      height: 16px;
+      right: -5px; bottom: 15%;
+      width: 16px; height: 16px;
       background: #FFBC30;
       border-radius: 50%;
     }
@@ -379,6 +359,83 @@
     }
     .carousel-btn:hover { background: #f5f5f5; }
 
+    /* ── ABOUT 섹션 ── */
+    .about {
+      position: relative;
+      width: 100%;
+    }
+
+    /* 위에서 내려오는 흰색 그라데이션 */
+    .about-fade-top {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(to bottom, #ffffff 0%, transparent 100%);
+      z-index: 2;
+      margin-bottom: -300px;
+      pointer-events: none;
+    }
+
+    /* 콜라주 배경 */
+    .about-collage {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url('썸네일콜라쥬.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 흰색 오버레이 */
+    .about-overlay {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    /* 텍스트 영역 */
+    .about-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      padding: 0 24px;
+    }
+    .about-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .about-label {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    .about-title {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      color: #222;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+    .about-desc {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 1.15rem;
+      color: #444;
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+
   </style>
 </head>
 <body>
@@ -401,7 +458,6 @@
     <span class="sticker s3">🖥️</span>
 
     <h1 class="hero-title">
-      <!-- line1: 형광펜 데코 포함 -->
       <span class="line1">
         <span class="line1-bar-left"></span>
         <span class="line1-dot-tl"></span>
@@ -544,7 +600,31 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section class="about">
+    <!-- 위에서 내려오는 흰색 그라데이션 -->
+    <div class="about-fade-top"></div>
+
+    <!-- 콜라주 배경 + 오버레이 + 텍스트 -->
+    <div class="about-collage">
+      <div class="about-overlay" id="aboutOverlay"></div>
+      <div class="about-content" id="aboutContent">
+        <p class="about-label">ABOUT</p>
+        <h2 class="about-title">곰이 편집하면<br>달라집니다</h2>
+        <p class="about-desc">
+          버츄얼부터 상업 영상까지,<br>
+          크리에이터의 순간을 가장 감각적으로 담는<br>
+          영상 편집자 Gom입니다.
+        </p>
+        <a href="#" class="btn" style="display:inline-flex; margin: 0 auto;">
+          <span class="dot"></span>작업 문의하기
+        </a>
+      </div>
+    </div>
+  </section>
+
   <script>
+    /* ── 캐러셀 ── */
     const track = document.getElementById('carouselTrack');
     const GAP = 24;
     const CARD_WIDTH = 500;
@@ -553,12 +633,9 @@
     const originalCards = Array.from(track.children);
     const total = originalCards.length;
 
-    // 뒤에 복제본 1세트
     originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
-    // 앞에 복제본 1세트
     originalCards.forEach(card => track.insertBefore(card.cloneNode(true), track.firstChild));
 
-    // 시작 위치 = 원본 첫 번째 카드
     let currentIndex = total;
     track.style.transition = 'none';
     track.style.transform = `translateX(-${currentIndex * STEP}px)`;
@@ -582,6 +659,36 @@
         }
       });
     }
+
+    /* ── ABOUT 스크롤 효과 ── */
+    const aboutCollage  = document.querySelector('.about-collage');
+    const aboutOverlay  = document.getElementById('aboutOverlay');
+    const aboutContent  = document.getElementById('aboutContent');
+
+    window.addEventListener('scroll', () => {
+      if (!aboutCollage) return;
+
+      const rect = aboutCollage.getBoundingClientRect();
+      const wh   = window.innerHeight;
+
+      if (rect.top < wh && rect.bottom > 0) {
+        // 0: 콜라주 화면 진입 시작 / 1: 콜라주 화면 통과 완료
+        const progress = Math.min(
+          Math.max((wh - rect.top) / (wh + rect.height), 0),
+          1
+        );
+
+        // 오버레이: 서서히 흰색으로 (0 → 1)
+        aboutOverlay.style.opacity = progress;
+
+        // 60% 넘으면 텍스트 등장
+        if (progress > 0.6) {
+          aboutContent.classList.add('visible');
+        } else {
+          aboutContent.classList.remove('visible');
+        }
+      }
+    });
   </script>
 
 </body>
