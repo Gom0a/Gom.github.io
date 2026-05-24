@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>곰 Gom | Video Editor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;900&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #dff2fc;
+      background-image:
+        linear-gradient(#b8d9f0 1px, transparent 1px),
+        linear-gradient(90deg, #b8d9f0 1px, transparent 1px);
+      background-size: 40px 40px;
+      font-family: 'Noto Sans KR', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Anybody', cursive;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #222;
+      border: 2.5px solid #222;
+      padding: 4px 14px;
+      border-radius: 6px;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-btn {
+      background: #ff8fab;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: 2px solid #222;
+      font-size: 0.85rem !important;
+      transition: background 0.2s;
+    }
+    .nav-btn:hover { background: #ff6b9d; }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 88vh;
+      padding: 60px 24px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* 떠다니는 스티커 */
+    .sticker {
+      position: absolute;
+      font-size: 2.2rem;
+      animation: float 3.5s ease-in-out infinite;
+      user-select: none;
+    }
+    .s1 { top: 12%; left: 8%;  animation-delay: 0s; }
+    .s2 { top: 18%; right: 10%; animation-delay: 0.6s; }
+    .s3 { bottom: 22%; left: 6%; animation-delay: 1.1s; }
+    .s4 { bottom: 18%; right: 8%; animation-delay: 1.7s; }
+    .s5 { top: 50%; left: 3%;  animation-delay: 0.3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(-3deg); }
+      50%       { transform: translateY(-14px) rotate(3deg); }
+    }
+
+    /* 서브 뱃지 */
+    .hero-badge {
+      background: #a8edcb;
+      border: 2px solid #222;
+      border-radius: 6px;
+      padding: 5px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #222;
+      margin-bottom: 28px;
+    }
+
+    /* 메인 타이틀 */
+    .hero-title {
+      font-family: 'Anybody', cursive;
+      font-size: clamp(3.2rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .hero-title .line1 { display: block; }
+
+    .hero-title .line2 {
+      display: inline-block;
+      background: #ff8fab;
+      padding: 0 16px;
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    /* 이모지 */
+    .hero-emoji {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin: 14px 0 32px;
+    }
+
+    /* 버튼 그룹 */
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: 2.5px solid #222;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 4px 4px 0px #222;
+    }
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #222;
+    }
+
+    .btn-primary { background: #ff8fab; color: #fff; }
+    .btn-secondary { background: #fff; color: #222; }
+
+    /* ── 스크롤 힌트 ── */
+    .scroll-hint {
+      margin-top: 52px;
+      font-size: 0.8rem;
+      color: #888;
+      letter-spacing: 1px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">gom.</div>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#" class="nav-btn">문의하기 🐻</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- 떠다니는 스티커들 -->
+    <span class="sticker s1">⭐</span>
+    <span class="sticker s2">💬</span>
+    <span class="sticker s3">🩷</span>
+    <span class="sticker s4">🌀</span>
+    <span class="sticker s5">✨</span>
+
+    <!-- 서브 뱃지 -->
+    <div class="hero-badge">🎬 Video Editor · Gom</div>
+
+    <!-- 메인 타이틀 -->
+    <h1 class="hero-title">
+      <span class="line1">the video edit</span>
+      <span class="line2">for every creator</span>
+    </h1>
+
+    <!-- 이모지 -->
+    <div class="hero-emoji">✨🐻✨</div>
+
+    <!-- CTA 버튼 -->
+    <div class="hero-buttons">
+      <a href="#" class="btn btn-secondary">작업물 보기 🎥</a>
+      <a href="#" class="btn btn-primary">문의하기 💌</a>
+    </div>
+
+    <div class="scroll-hint">↓ scroll down ↓</div>
+
+  </section>
+
+</body>
+</html>
