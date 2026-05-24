@@ -205,6 +205,139 @@
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(6px); }
     }
+    
+    /* ── WORKS 섹션 ── */
+.works {
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.works-welcome {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.works-title {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.works-desc {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 960px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+}
+
+.card {
+  min-width: 260px;
+  border-radius: 16px;
+  border: 2px solid #222;
+  overflow: hidden;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  background: var(--card-color);
+  padding: 16px;
+  text-align: left;
+}
+
+.card-tag {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.card-views {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 0.8rem;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.card-title {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 0.85rem;
+  color: #222;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-channel {
+  display: inline-block;
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #222;
+  background: #fff;
+  border: 1.5px solid #222;
+  border-radius: 999px;
+  padding: 4px 14px;
+  text-decoration: none;
+}
+
+.card-channel:hover {
+  background: #f5f5f5;
+}
+
+.carousel-btn {
+  background: #fff;
+  border: 2px solid #222;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+  background: #f5f5f5;
+}
+
   </style>
 </head>
 <body>
@@ -240,6 +373,136 @@
     <div class="scroll-hint">↓ scroll down ↓</div>
 
   </section>
+  
+ <!-- WORKS -->
+  <section class="works">
+    <div class="works-header">
+      <p class="works-welcome">✦ Gom의 포트폴리오에 오신 것을 환영합니다 ✦</p>
+      <h2 class="works-title">영상이 막막하고, 편집이 어렵고,<br>결과물이 걱정되는 크리에이터를 위해</h2>
+      <p class="works-desc">버츄얼, 스트리머부터 뷰티, 브이로그, 정보성, 예능 영상까지<br>크리에이터의 순간을 감각적인 영상으로 담아드립니다!</p>
+    </div>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8592;</button>
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="card" style="--card-color: #ffa8a8;">
+            <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank">
+              <img src="https://img.youtube.com/vi/D0BetwBIgXc/maxresdefault.jpg" alt="버츄얼 저스트채팅 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#버츄얼 저스트채팅</p>
+              <p class="card-views">👁 2만회</p>
+              <p class="card-title">명절에 찾아온 깜짝손님?!</p>
+              <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank" class="card-channel">위도 W2RDØ</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #fff0a8;">
+            <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank">
+              <img src="https://img.youtube.com/vi/k-bZ1K3otFA/maxresdefault.jpg" alt="버츄얼 다인합방 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#버츄얼 다인합방</p>
+              <p class="card-views">👁 1.3만회</p>
+              <p class="card-title">내가 라인 원툴이라고?! 「오버워치」</p>
+              <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank" class="card-channel">클로이 chlo2</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #c8e488;">
+            <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank">
+              <img src="https://img.youtube.com/vi/ty8KTgeQzcU/maxresdefault.jpg" alt="게임 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#게임</p>
+              <p class="card-views">👁 55만회</p>
+              <p class="card-title">배그 1티어 무기 '역대급 베릴 무반동 세팅법'</p>
+              <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank" class="card-channel">김블루</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #a8dcff;">
+            <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank">
+              <img src="https://img.youtube.com/vi/KDm95KaLxQM/maxresdefault.jpg" alt="뷰티 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#뷰티</p>
+              <p class="card-views">👁 5.7천회</p>
+              <p class="card-title">완판❗️피부탄력, 셀룰라이트, 승모근 고민이신 분들 필독</p>
+              <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank" class="card-channel">율럽Yulluv</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #ffbce3;">
+            <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank">
+              <img src="https://img.youtube.com/vi/GeEd5AlVh4g/maxresdefault.jpg" alt="브이로그 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#브이로그</p>
+              <p class="card-views">👁 1.6만회</p>
+              <p class="card-title">셀린느 장인 영접❗️명품백 플리마켓 준비, 이사, 언박싱, 미팅룩 VLOG</p>
+              <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank" class="card-channel">율럽Yulluv</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #ffa8a8;">
+            <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank">
+              <img src="https://img.youtube.com/vi/49UXx1JLTgk/maxresdefault.jpg" alt="병원 영상 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#병원 영상</p>
+              <p class="card-views">👁 183회</p>
+              <p class="card-title">필러 부작용? 안 맞는 얼굴이 따로 있습니다</p>
+              <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank" class="card-channel">벨포인트의원</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #fff0a8;">
+            <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank">
+              <img src="https://img.youtube.com/vi/T2DrU-Edbxo/maxresdefault.jpg" alt="정보성 영상 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#정보성 영상</p>
+              <p class="card-views">👁 28만회</p>
+              <p class="card-title">신형 쏘렌토 하이브리드 꼭 필요한 옵션!!!</p>
+              <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank" class="card-channel">원더굿라이프</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #c8e488;">
+            <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank">
+              <img src="https://img.youtube.com/vi/qtDHUvDpgzI/maxresdefault.jpg" alt="상업 영상 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#상업 영상</p>
+              <p class="card-views">👁 5.2만회</p>
+              <p class="card-title">지기가 환장한 택배 순대국밥 치팅먹방.mov</p>
+              <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank" class="card-channel">이게오네</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-btn next" onclick="moveCarousel(1)">&#8594;</button>
+    </div>
+  </section>
+
+  <script>
+    let currentIndex = 0;
+    const track = document.getElementById('carouselTrack');
+    const cards = track.querySelectorAll('.card');
+    const cardWidth = 280;
+
+    function moveCarousel(dir) {
+      const maxIndex = cards.length - 3;
+      currentIndex += dir;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+  </script>
 
 </body>
 </html>
