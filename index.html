@@ -229,28 +229,24 @@
       content: ''; position: absolute; inset: 0;
       background: rgba(0,0,0,0.25); z-index: 1;
     }
-
-    /* ── 핵심 변경: 유리 카드 → 흰색 50% 불투명 + 블러 ── */
     .about-content {
       position: relative; z-index: 2;
       text-align: center; opacity: 0;
       transform: translateY(30px);
       transition: opacity .8s ease, transform .8s ease;
       padding: 56px 72px;
-      background: rgba(255, 255, 255, 0.50);   /* 흰색 불투명도 50% */
-      backdrop-filter: blur(20px);              /* 가우시안 블러 */
+      background: rgba(255, 255, 255, 0.50);
+      backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 28px;
       border: 1px solid rgba(255, 255, 255, 0.60);
       max-width: 780px; width: 90%;
     }
     .about-content.visible { opacity: 1; transform: translateY(0); }
-
     .about-label {
       font-family: 'Paperlogy', sans-serif;
       font-size: .75rem; font-weight: 700;
-      letter-spacing: 8px;
-      color: #555;                              /* 흰색 → 어두운 회색 */
+      letter-spacing: 8px; color: #555;
       margin-bottom: 32px; text-transform: uppercase;
     }
     .about-stats {
@@ -261,28 +257,24 @@
     .about-stat-num {
       font-family: 'PaperlogyBold', sans-serif;
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      color: #0f78f5;                           /* 파란색 유지 */
-      line-height: 1;
+      color: #0f78f5; line-height: 1;
     }
     .about-stat-label {
       font-family: 'Paperlogy', sans-serif;
-      font-size: 0.82rem;
-      color: #444;                              /* 흰색 → 어두운 색 */
-      letter-spacing: 1px;
+      font-size: 0.82rem; color: #444; letter-spacing: 1px;
     }
     .about-divider {
       width: 48px; height: 2px;
-      background: rgba(0, 0, 0, 0.15);         /* 흰색 구분선 → 어두운 구분선 */
+      background: rgba(0,0,0,0.15);
       margin: 0 auto 32px;
     }
     .about-desc {
       font-family: 'Paperlogy', sans-serif;
-      font-size: 1.1rem;
-      color: #222;                              /* 흰색 → 검정 */
+      font-size: 1.1rem; color: #222;
       line-height: 2; margin-bottom: 40px;
     }
     .about-desc .blue {
-      color: #0f78f5;                           /* 파란색 유지 */
+      color: #0f78f5;
       font-family: 'PaperlogyBold', sans-serif;
     }
     .about-content .btn {
@@ -296,9 +288,7 @@
     /* ── VOICE ── */
     .voice {
       padding: 120px 48px;
-      background: #fff;
-      background-image: linear-gradient(#d0d0d0 1px, transparent 1px), linear-gradient(90deg, #d0d0d0 1px, transparent 1px);
-      background-size: 40px 40px;
+      background: #f8f8f8;
     }
     .voice-header { text-align: center; margin-bottom: 64px; }
     .voice-header-label {
@@ -318,13 +308,15 @@
     }
     .voice-card {
       background: #fff; border-radius: 20px;
-      border: 2px solid #222; padding: 32px;
+      border: 1.5px solid #e8e8e8;
+      padding: 32px;
       display: flex; flex-direction: column; gap: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     }
     .voice-card-top { display: flex; align-items: flex-start; gap: 16px; }
     .voice-card-top img {
       width: 56px; height: 56px; border-radius: 50%;
-      object-fit: cover; border: 2px solid #222; flex-shrink: 0;
+      object-fit: cover; border: 2px solid #eee; flex-shrink: 0;
     }
     .voice-bubble {
       position: relative; background: #f5f5f5;
@@ -545,8 +537,8 @@
   <!-- ── VOICE ── -->
   <section class="voice">
     <div class="voice-header">
-      <p class="voice-header-label">Client Voice</p>
-      <h2 class="voice-header-title">편집을 맡기기 전,<br>이런 고민 하셨나요?</h2>
+      <p class="voice-header-label">User Research</p>
+      <h2 class="voice-header-title">편집을 맡기기 전,<br>크리에이터들이 가장 많이 하는 고민을 들어봤어요.</h2>
     </div>
     <div class="voice-grid">
 
@@ -565,10 +557,10 @@
         <div class="voice-card-top">
           <img src="face2.png" alt="해키">
           <div class="voice-bubble">
-            <p class="voice-bubble-text">"처음 맡기는 거라 편집자를 믿어도 될지 걱정됐어요."</p>
+            <p class="voice-bubble-text">"편집 맡기고 싶은데 믿을 수 있을지 걱정됐어요."</p>
           </div>
         </div>
-        <p class="voice-card-info">해키 · 유튜브 운영 3년차</p>
+        <p class="voice-card-info">소리 · 유튜브 운영 3년차</p>
         <p class="voice-card-body">결과물이 마음에 안 들면 어떡하지, 소통이 잘 안 되면 어떡하지 하는 불안감이 컸는데 생각보다 훨씬 꼼꼼하게 챙겨줬어요.</p>
       </div>
 
@@ -576,7 +568,7 @@
         <div class="voice-card-top">
           <img src="face3.png" alt="지니">
           <div class="voice-bubble">
-            <p class="voice-bubble-text">"내 채널 분위기를 편집자가 이해할 수 있을까요?"</p>
+            <p class="voice-bubble-text">"내 채널 분위기를 잘 살려줄 수 있을지 불안했어요."</p>
           </div>
         </div>
         <p class="voice-card-info">지니 · 버츄얼 스트리머</p>
@@ -587,7 +579,7 @@
         <div class="voice-card-top">
           <img src="face4.png" alt="세이">
           <div class="voice-bubble">
-            <p class="voice-bubble-text">"수정 요청을 너무 많이 하면 눈치 보일 것 같았어요."</p>
+            <p class="voice-bubble-text">"소통이 잘 될지 불안했어요."</p>
           </div>
         </div>
         <p class="voice-card-info">세이 · 뷰티 유튜버</p>
