@@ -244,13 +244,16 @@
     }
 
     /* ── WORKS 섹션 ── */
-    .works {
-      padding: 80px 48px;
-      text-align: center;
-    }
+.works {
+  padding-top: 120px;    /* ← 이 숫자를 키우면 띠지와의 간격이 넓어져요 */
+  padding-bottom: 80px;
+  padding-left: 48px;
+  padding-right: 48px;
+  text-align: center;
+}
 
     .works-welcome {
-      font-family: 'PaperlogyLight', sans-serif;
+      font-family: 'Paperlogy', sans-serif;
       font-size: 1rem;
       letter-spacing: 2px;
       color: #888;
@@ -260,14 +263,14 @@
     .works-title {
       font-family: 'PaperlogyBold', sans-serif;
       font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-weight: 700;
+      font-weight: 500;
       color: #222;
-      line-height: 1.4;
+      line-height: 2;
       margin-bottom: 20px;
     }
 
     .works-desc {
-      font-family: 'PaperlогySemiBold', sans-serif;
+      font-family: 'Paperlогy', sans-serif;
       font-size: 1.15rem;
       color: #555;
       line-height: 1.7;
@@ -549,10 +552,11 @@
       track.insertBefore(card.cloneNode(true), track.firstChild);
     });
 
-    // 시작 위치 = 앞 복제본 다음 (원본 첫 번째)
-    let currentIndex = total;
-    track.style.transition = 'none';
-    track.style.transform = `translateX(-${currentIndex * STEP}px)`;
+// 시작 위치 = 원본 두 번째 카드부터 시작
+let currentIndex = total + 1;
+track.style.transition = 'none';
+track.style.transform = `translateX(-${currentIndex * STEP}px)`;
+
 
     function moveCarousel(dir) {
       currentIndex += dir;
