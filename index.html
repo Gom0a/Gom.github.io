@@ -380,49 +380,66 @@
       background: rgba(0, 0, 0, 0.35);
       z-index: 1;
     }
-    .about-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      padding: 0 24px;
-    }
-    .about-content.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .about-label {
-      font-family: 'Paperlogy', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 6px;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 20px;
-    }
-    .about-title {
-      font-family: 'PaperlogyBold', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      color: #ffffff;
-      line-height: 1.2;
-      margin-bottom: 28px;
-    }
-    .about-desc {
-      font-family: 'Paperlogy', sans-serif;
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.9;
-      margin-bottom: 40px;
-    }
-    .about-content .btn {
-      background: #ffffff;
-      color: #222;
-      border-color: #ffffff;
-      display: inline-flex;
-      margin: 0 auto;
-    }
-    .about-content .btn:hover { background: rgba(255,255,255,0.85); }
+   .about-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  padding: 48px 56px;
+
+  /* 반투명 블러 도형 */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.about-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-label {
+  font-family: 'PaperlogyBold', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: #0f78f5;
+  margin-bottom: 20px;
+}
+.about-title {
+  font-family: 'PaperlogyBold', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.about-title .blue {
+  color: #0f78f5;
+  font-family: 'PaperlogyBold', sans-serif;
+}
+.about-desc {
+  font-family: 'Paperlogy', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+.about-desc .blue {
+  color: #0f78f5;
+  font-family: 'PaperlogyBold', sans-serif;
+  font-weight: 700;
+}
+.about-content .btn {
+  background: #ffffff;
+  color: #222;
+  border-color: #ffffff;
+  display: inline-flex;
+  margin: 0 auto;
+}
+.about-content .btn:hover { background: rgba(255,255,255,0.85); }
+
 
     /* ── VOICE 섹션 (카드 4개) ── */
     .voice {
@@ -688,20 +705,20 @@
 
   <!-- ABOUT -->
   <section class="about">
-    <div class="about-fade-top"></div>
-    <div class="about-collage">
-      <div class="about-content" id="aboutContent">
-        <p class="about-label">ABOUT</p>
-        <h2 class="about-title">곰이 편집하면<br>달라집니다</h2>
-        <p class="about-desc">
-          버츄얼부터 상업 영상까지,<br>
-          크리에이터의 순간을 가장 감각적으로 담는<br>
-          영상 편집자 Gom입니다.
-        </p>
-        <a href="#" class="btn about-btn">
-          <span class="dot"></span>작업 문의하기
-        </a>
-      </div>
+<div class="about-content" id="aboutContent">
+  <p class="about-label">ABOUT</p>
+  <h2 class="about-title">
+    <span class="blue">경력 4년차</span>, 누적 구독자 <span class="blue">550만명</span>,<br>
+    <span class="blue">50개</span> 이상의 채널을 함께했습니다.
+  </h2>
+  <p class="about-desc">
+    버츄얼·게임·뷰티·브이로그·정보성·상업 영상까지<br>
+    장르를 가리지 않는 <span class="blue">영상 편집자 Gom</span>입니다.
+  </p>
+  <a href="#" class="btn about-btn">
+    <span class="dot"></span>작업 문의하기
+  </a>
+</div>
     </div>
   </section>
 
