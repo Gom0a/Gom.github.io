@@ -232,7 +232,7 @@
     /* ── WORKS 섹션 ── */
     .works {
       padding-top: 200px;
-      padding-bottom: 350px;
+      padding-bottom: 200px;
       padding-left: 48px;
       padding-right: 48px;
       text-align: center;
@@ -380,68 +380,65 @@
       background: rgba(0, 0, 0, 0.35);
       z-index: 1;
     }
-   .about-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  padding: 48px 56px;
+    .about-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      padding: 48px 56px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .about-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .about-label {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      color: #0f78f5;
+      margin-bottom: 20px;
+    }
+    .about-title {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      color: #ffffff;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .about-title .blue {
+      color: #0f78f5;
+      font-family: 'PaperlogyBold', sans-serif;
+    }
+    .about-desc {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+    .about-desc .blue {
+      color: #0f78f5;
+      font-family: 'PaperlogyBold', sans-serif;
+      font-weight: 700;
+    }
+    .about-content .btn {
+      background: #ffffff;
+      color: #222;
+      border-color: #ffffff;
+      display: inline-flex;
+      margin: 0 auto;
+    }
+    .about-content .btn:hover { background: rgba(255,255,255,0.85); }
 
-  /* 반투명 블러 도형 */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-.about-content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.about-label {
-  font-family: 'PaperlogyBold', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 6px;
-  color: #0f78f5;
-  margin-bottom: 20px;
-}
-.about-title {
-  font-family: 'PaperlogyBold', sans-serif;
-  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-  color: #ffffff;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-.about-title .blue {
-  color: #0f78f5;
-  font-family: 'PaperlogyBold', sans-serif;
-}
-.about-desc {
-  font-family: 'Paperlogy', sans-serif;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.9;
-  margin-bottom: 40px;
-}
-.about-desc .blue {
-  color: #0f78f5;
-  font-family: 'PaperlogyBold', sans-serif;
-  font-weight: 700;
-}
-.about-content .btn {
-  background: #ffffff;
-  color: #222;
-  border-color: #ffffff;
-  display: inline-flex;
-  margin: 0 auto;
-}
-.about-content .btn:hover { background: rgba(255,255,255,0.85); }
-
-
-    /* ── VOICE 섹션 (카드 4개) ── */
+    /* ── VOICE 섹션 ── */
     .voice {
       padding: 120px 48px;
       background: #f9f9f9;
@@ -462,12 +459,6 @@
       line-height: 1.5;
       margin-bottom: 64px;
     }
-    .voice-title strong {
-      font-family: 'PaperlogyBold', sans-serif;
-      color: #222;
-    }
-
-    /* 카드 그리드 */
     .voice-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -475,8 +466,6 @@
       max-width: 1100px;
       margin: 0 auto;
     }
-
-    /* 개별 카드 */
     .voice-card {
       background: #ffffff;
       border-radius: 20px;
@@ -484,8 +473,6 @@
       text-align: left;
       box-shadow: 0 2px 16px rgba(0,0,0,0.07);
     }
-
-    /* 상단: 아이콘 + 말풍선 */
     .voice-card-top {
       display: flex;
       align-items: flex-start;
@@ -499,8 +486,6 @@
       object-fit: cover;
       flex-shrink: 0;
     }
-
-    /* 말풍선 */
     .voice-bubble {
       position: relative;
       background: #f3f3f3;
@@ -523,17 +508,13 @@
       color: #222;
       line-height: 1.5;
     }
-
-    /* 이름 + 정보 */
     .voice-card-info {
       font-family: 'Paperlogy', sans-serif;
       font-size: 0.82rem;
       color: #999;
       margin-bottom: 16px;
-      padding-left: 80px; /* 아이콘 너비만큼 들여쓰기 */
+      padding-left: 80px;
     }
-
-    /* 본문 */
     .voice-card-body {
       font-family: 'Paperlogy', sans-serif;
       font-size: 0.95rem;
@@ -705,34 +686,34 @@
 
   <!-- ABOUT -->
   <section class="about">
-<div class="about-content" id="aboutContent">
-  <p class="about-label">ABOUT</p>
-  <h2 class="about-title">
-    <span class="blue">경력 4년차</span>, 누적 구독자 <span class="blue">550만명</span>,<br>
-    <span class="blue">50개</span> 이상의 채널을 함께했습니다.
-  </h2>
-  <p class="about-desc">
-    버츄얼·게임·뷰티·브이로그·정보성·상업 영상까지<br>
-    장르를 가리지 않는 <span class="blue">영상 편집자 Gom</span>입니다.
-  </p>
-  <a href="#" class="btn about-btn">
-    <span class="dot"></span>작업 문의하기
-  </a>
-</div>
+    <div class="about-fade-top"></div>
+    <div class="about-collage">
+      <div class="about-content" id="aboutContent">
+        <p class="about-label">ABOUT</p>
+        <h2 class="about-title">
+          <span class="blue">경력 4년차</span>, 누적 구독자 <span class="blue">550만명</span>,<br>
+          <span class="blue">50개</span> 이상의 채널을 함께했습니다.
+        </h2>
+        <p class="about-desc">
+          버츄얼·게임·뷰티·브이로그·정보성·상업 영상까지<br>
+          장르를 가리지 않는 <span class="blue">영상 편집자 Gom</span>입니다.
+        </p>
+        <a href="#" class="btn about-btn">
+          <span class="dot"></span>작업 문의하기
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- VOICE (고민 카드 4개) -->
+  <!-- VOICE -->
   <section class="voice">
     <p class="voice-label">User Research</p>
     <h2 class="voice-title">
       편집을 맡기기 전,<br>
       <strong>크리에이터들이 가장 많이 하는 고민</strong>을 들어봤어요.
     </h2>
-
     <div class="voice-grid">
 
-      <!-- 카드 1 -->
       <div class="voice-card">
         <div class="voice-card-top">
           <img src="face1.png" alt="린린">
@@ -741,13 +722,9 @@
           </div>
         </div>
         <p class="voice-card-info">린린 · 유튜브 운영 1년 차</p>
-        <p class="voice-card-body">
-          레퍼런스를 찾아봐도 내 채널이랑 맞는 스타일인지 확신이 없고,
-          편집자한테 어떻게 설명해야 할지 막막했어요.
-        </p>
+        <p class="voice-card-body">레퍼런스를 찾아봐도 내 채널이랑 맞는 스타일인지 확신이 없고, 편집자한테 어떻게 설명해야 할지 막막했어요.</p>
       </div>
 
-      <!-- 카드 2 -->
       <div class="voice-card">
         <div class="voice-card-top">
           <img src="face2.png" alt="해키">
@@ -756,13 +733,9 @@
           </div>
         </div>
         <p class="voice-card-info">해키 · 유튜브 운영 3년 차</p>
-        <p class="voice-card-body">
-          퀄리티가 기대에 못 미치거나 수정이 너무 많아질까봐
-          선뜻 편집을 맡기지 못하고 혼자 다 하고 있었어요.
-        </p>
+        <p class="voice-card-body">퀄리티가 기대에 못 미치거나 수정이 너무 많아질까봐 선뜻 편집을 맡기지 못하고 혼자 다 하고 있었어요.</p>
       </div>
 
-      <!-- 카드 3 -->
       <div class="voice-card">
         <div class="voice-card-top">
           <img src="face3.png" alt="지니">
@@ -771,13 +744,9 @@
           </div>
         </div>
         <p class="voice-card-info">지니 · 버츄얼 스트리머</p>
-        <p class="voice-card-body">
-          내 캐릭터나 채널 색깔이 강한 편이라
-          편집자가 그 느낌을 제대로 잡아줄 수 있을지 늘 걱정이었어요.
-        </p>
+        <p class="voice-card-body">내 캐릭터나 채널 색깔이 강한 편이라 편집자가 그 느낌을 제대로 잡아줄 수 있을지 늘 걱정이었어요.</p>
       </div>
 
-      <!-- 카드 4 -->
       <div class="voice-card">
         <div class="voice-card-top">
           <img src="face4.png" alt="세이">
@@ -786,10 +755,7 @@
           </div>
         </div>
         <p class="voice-card-info">세이 · 뷰티 유튜버</p>
-        <p class="voice-card-body">
-          수정 요청을 해도 제대로 반영이 안 되거나
-          커뮤니케이션이 어려울 것 같아서 망설였어요.
-        </p>
+        <p class="voice-card-body">수정 요청을 해도 제대로 반영이 안 되거나 커뮤니케이션이 어려울 것 같아서 망설였어요.</p>
       </div>
 
     </div>
