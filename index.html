@@ -4,15 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>곰 Gom | Video Editor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;900&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
+    @font-face {
+      font-family: 'StretchPro';
+      src: url('StretchPro.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'NewRomantics';
+      src: url('ROMANTIC.TTF') format('truetype');
+    }
+    @font-face {
+      font-family: 'KiwiSoda';
+      src: url('KiwiSoda.ttf') format('truetype');
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: #dff2fc;
+      background-color: #ffffff;
       background-image:
-        linear-gradient(#b8d9f0 1px, transparent 1px),
-        linear-gradient(90deg, #b8d9f0 1px, transparent 1px);
+        linear-gradient(#d0d0d0 1px, transparent 1px),
+        linear-gradient(90deg, #d0d0d0 1px, transparent 1px);
       background-size: 40px 40px;
       font-family: 'Noto Sans KR', sans-serif;
       min-height: 100vh;
@@ -25,7 +37,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 48px;
-      background: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
       border-bottom: 2px solid #222;
       position: sticky;
@@ -34,8 +46,8 @@
     }
 
     .nav-logo {
-      font-family: 'Anybody', cursive;
-      font-size: 1.6rem;
+      font-family: 'KiwiSoda', cursive;
+      font-size: 1.8rem;
       font-weight: 900;
       color: #222;
       border: 2.5px solid #222;
@@ -48,6 +60,7 @@
       display: flex;
       gap: 32px;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -60,15 +73,28 @@
     }
 
     .nav-btn {
-      background: #ff8fab;
-      color: #fff !important;
-      padding: 8px 20px;
+      background: rgba(255,255,255,0.85) !important;
+      color: #222 !important;
+      padding: 7px 18px !important;
       border-radius: 999px;
-      border: 2px solid #222;
+      border: 1.5px solid #222 !important;
       font-size: 0.85rem !important;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       transition: background 0.2s;
     }
-    .nav-btn:hover { background: #ff6b9d; }
+    .nav-btn:hover {
+      background: #f5f5f5 !important;
+    }
+    .nav-btn .dot {
+      width: 0.85rem;
+      height: 0.85rem;
+      min-width: 0.85rem;
+      background: #ffd7dd;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -116,18 +142,21 @@
 
     /* 메인 타이틀 */
     .hero-title {
-      font-family: 'Anybody', cursive;
-      font-size: clamp(3.2rem, 10vw, 8rem);
-      font-weight: 900;
       line-height: 1.0;
       color: #222;
       margin-bottom: 10px;
     }
 
-    .hero-title .line1 { display: block; }
+    .hero-title .line1 {
+      display: block;
+      font-family: 'StretchPro', sans-serif;
+      font-size: clamp(3.2rem, 10vw, 8rem);
+    }
 
     .hero-title .line2 {
       display: inline-block;
+      font-family: 'NewRomantics', serif;
+      font-size: clamp(3.2rem, 10vw, 8rem);
       background: #ff8fab;
       padding: 0 16px;
       border-radius: 8px;
@@ -156,18 +185,27 @@
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 4px 4px 0px #222;
+      transition: transform 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .btn:hover {
       transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0px #222;
+    }
+    .btn .dot {
+      width: 1rem;
+      height: 1rem;
+      min-width: 1rem;
+      background: #ffd7dd;
+      border-radius: 50%;
+      display: inline-block;
     }
 
     .btn-primary { background: #ff8fab; color: #fff; }
     .btn-secondary { background: #fff; color: #222; }
 
-    /* ── 스크롤 힌트 ── */
+    /* 스크롤 힌트 */
     .scroll-hint {
       margin-top: 52px;
       font-size: 0.8rem;
@@ -190,36 +228,31 @@
       <li><a href="#">About</a></li>
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">Services</a></li>
-      <li><a href="#" class="nav-btn">문의하기 🐻</a></li>
+      <li><a href="#" class="nav-btn"><span class="dot"></span>문의하기</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
 
-    <!-- 떠다니는 스티커들 -->
     <span class="sticker s1">⭐</span>
     <span class="sticker s2">💬</span>
     <span class="sticker s3">🩷</span>
     <span class="sticker s4">🌀</span>
     <span class="sticker s5">✨</span>
 
-    <!-- 서브 뱃지 -->
     <div class="hero-badge">🎬 Video Editor · Gom</div>
 
-    <!-- 메인 타이틀 -->
     <h1 class="hero-title">
       <span class="line1">the video edit</span>
       <span class="line2">for every creator</span>
     </h1>
 
-    <!-- 이모지 -->
     <div class="hero-emoji">✨🐻✨</div>
 
-    <!-- CTA 버튼 -->
     <div class="hero-buttons">
-      <a href="#" class="btn btn-secondary">작업물 보기 🎥</a>
-      <a href="#" class="btn btn-primary">문의하기 💌</a>
+      <a href="#" class="btn btn-secondary"><span class="dot"></span>작업물 보기</a>
+      <a href="#" class="btn btn-primary"><span class="dot"></span>문의하기</a>
     </div>
 
     <div class="scroll-hint">↓ scroll down ↓</div>
