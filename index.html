@@ -23,6 +23,18 @@
       font-weight: normal;
       font-style: normal;
     }
+    @font-face {
+      font-family: 'PaperlogyLight';
+      src: url('Paperlogy-3Light.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'PaperlогySemiBold';
+      src: url('Paperlogy-6SemiBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'PaperlogyBold';
+      src: url('Paperlogy-7Bold.ttf') format('truetype');
+    }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -108,20 +120,19 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 88vh;
+      min-height: 92vh;
       padding: 60px 24px 40px;
       text-align: center;
       position: relative;
     }
 
-    /* 떠다니는 스티커 */
     .sticker {
       position: absolute;
       font-size: 4rem;
       animation: float 3.5s ease-in-out infinite;
       user-select: none;
     }
-    .s1 { top: 28%; left: 37%;  animation-delay: 0s; }
+    .s1 { top: 28%; left: 37%; animation-delay: 0s; }
     .s2 { top: 29%; right: 35%; animation-delay: 0.6s; }
     .s3 { bottom: 40%; left: 72%; animation-delay: 1.1s; }
 
@@ -130,7 +141,6 @@
       50%       { transform: translateY(-14px) rotate(3deg); }
     }
 
-    /* 메인 타이틀 */
     .hero-title {
       line-height: 0.90;
       color: #2c2b2b;
@@ -138,15 +148,15 @@
     }
 
     .hero-title .line1 {
-  display: block;
-  font-family: 'Epilogue';
-  font-size: clamp(4.5rem, 13vw, 11rem);
-  letter-spacing: -5px;
-  word-spacing: -10px;
-  background: linear-gradient(transparent 30%, #d2e5ae 30%, #d2e5ae 80%, transparent 80%);
-  padding: 0 32px;
-  margin: 0 -32px;
-}
+      display: block;
+      font-family: 'Epilogue';
+      font-size: clamp(4.5rem, 13vw, 11rem);
+      letter-spacing: -5px;
+      word-spacing: -10px;
+      background: linear-gradient(transparent 30%, #d2e5ae 30%, #d2e5ae 80%, transparent 80%);
+      padding: 0 32px;
+      margin: 0 -32px;
+    }
 
     .hero-title .line2 {
       display: inline-block;
@@ -158,7 +168,6 @@
       word-spacing: -10px;
     }
 
-    /* 버튼 그룹 */
     .hero-buttons {
       display: flex;
       gap: 16px;
@@ -193,7 +202,6 @@
       display: inline-block;
     }
 
-    /* 스크롤 힌트 */
     .scroll-hint {
       font-size: 0.8rem;
       color: #888;
@@ -205,6 +213,168 @@
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(6px); }
     }
+
+    /* ── 흐르는 띠지 ── */
+    .ticker-wrap {
+      width: 100%;
+      background: #ffd7de;
+      border-top: 2px solid #222;
+      border-bottom: 2px solid #222;
+      padding: 25px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      animation: ticker 25s linear infinite;
+    }
+
+    .ticker-track span {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #222;
+    }
+
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── WORKS 섹션 ── */
+.works {
+  padding-top: 200px;
+  padding-bottom: 80px;
+  padding-left: 48px;
+  padding-right: 48px;
+  text-align: center;
+}
+
+    .works-welcome {
+      font-family: 'PaperlогySemiBold', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 80px;
+    }
+
+    .works-title {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 500;
+      color: #222;
+      line-height: 1.2;
+      margin-bottom: 80px;
+    }
+
+    .works-desc {
+      font-family: 'PaperlогySemiBold', sans-serif;
+      font-size: 1.15rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 80px;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .carousel-track-container {
+      overflow: hidden;
+      width: 100%;
+      max-width: 1600px;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+
+    .card {
+      min-width: 500px;
+      border-radius: 16px;
+      border: 2px solid #222;
+      overflow: hidden;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      background: var(--card-color);
+      padding: 20px;
+      text-align: left;
+    }
+
+    .card-tag {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .card-views {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 1rem;
+      color: #222;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-channel {
+      display: inline-block;
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #222;
+      background: #fff;
+      border: 1.5px solid #222;
+      border-radius: 999px;
+      padding: 5px 16px;
+      text-decoration: none;
+    }
+
+    .card-channel:hover { background: #f5f5f5; }
+
+    .carousel-btn {
+      background: #fff;
+      border: 2px solid #222;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .carousel-btn:hover { background: #f5f5f5; }
+
   </style>
 </head>
 <body>
@@ -222,7 +392,6 @@
 
   <!-- HERO -->
   <section class="hero">
-
     <span class="sticker s1">🎥</span>
     <span class="sticker s2">💬</span>
     <span class="sticker s3">🖥️</span>
@@ -238,8 +407,181 @@
     </div>
 
     <div class="scroll-hint">↓ scroll down ↓</div>
-
   </section>
+
+  <!-- 흐르는 띠지 -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; </span>
+      <span>MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; MAKING YOUTUBE VIDEO &nbsp;|&nbsp; </span>
+    </div>
+  </div>
+
+  <!-- WORKS -->
+  <section class="works">
+    <div class="works-header">
+      <p class="works-welcome">✦ Gom의 포트폴리오에 오신 것을 환영합니다 ✦</p>
+      <h2 class="works-title">영상이 막막하고, 편집이 어렵고,<br>결과물이 걱정되는 크리에이터를 위해</h2>
+      <p class="works-desc">버츄얼, 스트리머부터 뷰티, 브이로그, 정보성, 예능 영상까지<br>크리에이터의 순간을 감각적인 영상으로 담아드립니다!</p>
+    </div>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8592;</button>
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="card" style="--card-color: #ffa8a8;">
+            <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank">
+              <img src="https://img.youtube.com/vi/D0BetwBIgXc/maxresdefault.jpg" alt="버츄얼 저스트채팅 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#저스트 채팅</p>
+              <p class="card-views">👁 2만회</p>
+              <p class="card-title">명절에 찾아온 깜짝손님?!</p>
+              <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank" class="card-channel">위도 W2RDØ</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #fff0a8;">
+            <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank">
+              <img src="https://img.youtube.com/vi/k-bZ1K3otFA/maxresdefault.jpg" alt="버츄얼 다인합방 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#다인합방</p>
+              <p class="card-views">👁 1.3만회</p>
+              <p class="card-title">내가 라인 원툴이라고?! 「오버워치」</p>
+              <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank" class="card-channel">클로이 chlo2</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #c8e488;">
+            <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank">
+              <img src="https://img.youtube.com/vi/ty8KTgeQzcU/maxresdefault.jpg" alt="게임 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#게임</p>
+              <p class="card-views">👁 55만회</p>
+              <p class="card-title">배그 1티어 무기 '역대급 베릴 무반동 세팅법'</p>
+              <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank" class="card-channel">김블루</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #a8dcff;">
+            <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank">
+              <img src="https://img.youtube.com/vi/KDm95KaLxQM/maxresdefault.jpg" alt="뷰티 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#뷰티</p>
+              <p class="card-views">👁 5.7천회</p>
+              <p class="card-title">완판❗️피부탄력, 셀룰라이트, 승모근 고민이신 분들 필독</p>
+              <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank" class="card-channel">율럽Yulluv</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #ffbce3;">
+            <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank">
+              <img src="https://img.youtube.com/vi/GeEd5AlVh4g/maxresdefault.jpg" alt="브이로그 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#브이로그</p>
+              <p class="card-views">👁 1.6만회</p>
+              <p class="card-title">셀린느 장인 영접❗️명품백 플리마켓 준비, 이사, 언박싱, 미팅룩 VLOG</p>
+              <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank" class="card-channel">율럽Yulluv</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #ffa8a8;">
+            <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank">
+              <img src="https://img.youtube.com/vi/49UXx1JLTgk/maxresdefault.jpg" alt="병원 영상 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#병원 영상</p>
+              <p class="card-views">👁 183회</p>
+              <p class="card-title">필러 부작용? 안 맞는 얼굴이 따로 있습니다</p>
+              <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank" class="card-channel">벨포인트의원</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #fff0a8;">
+            <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank">
+              <img src="https://img.youtube.com/vi/T2DrU-Edbxo/maxresdefault.jpg" alt="정보성 영상 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#정보성 영상</p>
+              <p class="card-views">👁 28만회</p>
+              <p class="card-title">신형 쏘렌토 하이브리드 꼭 필요한 옵션!!!</p>
+              <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank" class="card-channel">원더굿라이프</a>
+            </div>
+          </div>
+
+          <div class="card" style="--card-color: #c8e488;">
+            <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank">
+              <img src="https://img.youtube.com/vi/qtDHUvDpgzI/maxresdefault.jpg" alt="상업 영상 썸네일">
+            </a>
+            <div class="card-body">
+              <p class="card-tag">#상업 영상</p>
+              <p class="card-views">👁 5.2만회</p>
+              <p class="card-title">지기가 환장한 택배 순대국밥 치팅먹방.mov</p>
+              <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank" class="card-channel">이게오네</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-btn next" onclick="moveCarousel(1)">&#8594;</button>
+    </div>
+  </section>
+
+  <script>
+    const track = document.getElementById('carouselTrack');
+    const GAP = 24;
+    const CARD_WIDTH = 500;
+    const STEP = CARD_WIDTH + GAP;
+
+    // 원본 카드 저장
+    const originalCards = Array.from(track.children);
+    const total = originalCards.length;
+
+    // 뒤에 복제본 1세트 추가
+    originalCards.forEach(card => {
+      track.appendChild(card.cloneNode(true));
+    });
+
+    // 앞에 복제본 1세트 추가
+    originalCards.forEach(card => {
+      track.insertBefore(card.cloneNode(true), track.firstChild);
+    });
+
+// 시작 위치 = 원본 두 번째 카드부터 시작
+let currentIndex = total;
+track.style.transition = 'none';
+track.style.transform = `translateX(-${currentIndex * STEP}px)`;
+
+
+    function moveCarousel(dir) {
+      currentIndex += dir;
+      track.style.transition = 'transform 0.4s ease';
+      track.style.transform = `translateX(-${currentIndex * STEP}px)`;
+
+      track.addEventListener('transitionend', function onEnd() {
+        track.removeEventListener('transitionend', onEnd);
+
+        // 오른쪽 끝 초과 → 원본 시작으로 점프
+        if (currentIndex >= total * 2) {
+          currentIndex = total;
+          track.style.transition = 'none';
+          track.style.transform = `translateX(-${currentIndex * STEP}px)`;
+        }
+
+        // 왼쪽 끝 초과 → 원본 마지막으로 점프
+        if (currentIndex < total) {
+          currentIndex = total * 2 - 1;
+          track.style.transition = 'none';
+          track.style.transform = `translateX(-${currentIndex * STEP}px)`;
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
