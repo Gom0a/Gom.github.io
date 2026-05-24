@@ -17,6 +17,10 @@
       font-family: 'KiwiSoda';
       src: url('KiwiSoda.ttf') format('truetype');
     }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('Paperlogy-7Bold.ttf') format('truetype');
+    }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -26,7 +30,7 @@
         linear-gradient(#d0d0d0 1px, transparent 1px),
         linear-gradient(90deg, #d0d0d0 1px, transparent 1px);
       background-size: 40px 40px;
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Paperlogy', sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -53,7 +57,7 @@
       border: 2.5px solid #222;
       padding: 4px 14px;
       border-radius: 6px;
-      letter-spacing: -1px;
+      letter-spacing: 4px;
     }
 
     .nav-links {
@@ -70,6 +74,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
+      font-family: 'Paperlogy', sans-serif;
     }
 
     .nav-btn {
@@ -79,14 +84,13 @@
       border-radius: 999px;
       border: 1.5px solid #222 !important;
       font-size: 0.85rem !important;
+      font-family: 'Paperlogy', sans-serif !important;
       display: flex;
       align-items: center;
       gap: 8px;
       transition: background 0.2s;
     }
-    .nav-btn:hover {
-      background: #f5f5f5 !important;
-    }
+    .nav-btn:hover { background: #f5f5f5 !important; }
     .nav-btn .dot {
       width: 0.85rem;
       height: 0.85rem;
@@ -126,31 +130,20 @@
       50%       { transform: translateY(-14px) rotate(3deg); }
     }
 
-    /* 서브 뱃지 */
-    .hero-badge {
-      background: #a8edcb;
-      border: 2px solid #222;
-      border-radius: 6px;
-      padding: 5px 16px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #222;
-      margin-bottom: 28px;
-    }
-
     /* 메인 타이틀 */
     .hero-title {
-      line-height: 1.0;
+      line-height: 1.1;
       color: #222;
-      margin-bottom: 10px;
+      margin-bottom: 32px;
     }
 
     .hero-title .line1 {
       display: block;
       font-family: 'StretchPro', sans-serif;
       font-size: clamp(3.2rem, 10vw, 8rem);
+      letter-spacing: -2px;
+      background: linear-gradient(transparent 55%, #ffd7dd 55%);
+      padding-bottom: 4px;
     }
 
     .hero-title .line2 {
@@ -158,15 +151,10 @@
       font-family: 'NewRomantics', serif;
       font-size: clamp(3.2rem, 10vw, 8rem);
       background: #ff8fab;
-      padding: 0 16px;
+      padding: 0 20px;
       border-radius: 8px;
       color: #fff;
-    }
-
-    /* 이모지 */
-    .hero-emoji {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      margin: 14px 0 32px;
+      letter-spacing: 8px;
     }
 
     /* 버튼 그룹 */
@@ -183,16 +171,17 @@
       border: 2.5px solid #222;
       font-size: 1rem;
       font-weight: 700;
+      font-family: 'Paperlogy', sans-serif;
       cursor: pointer;
       text-decoration: none;
       transition: transform 0.15s;
       display: flex;
       align-items: center;
       gap: 10px;
+      background: #fff;
+      color: #222;
     }
-    .btn:hover {
-      transform: translate(-2px, -2px);
-    }
+    .btn:hover { transform: translate(-2px, -2px); }
     .btn .dot {
       width: 1rem;
       height: 1rem;
@@ -202,15 +191,13 @@
       display: inline-block;
     }
 
-    .btn-primary { background: #ff8fab; color: #fff; }
-    .btn-secondary { background: #fff; color: #222; }
-
     /* 스크롤 힌트 */
     .scroll-hint {
       margin-top: 52px;
       font-size: 0.8rem;
       color: #888;
       letter-spacing: 1px;
+      font-family: 'Paperlogy', sans-serif;
       animation: bounce 2s infinite;
     }
     @keyframes bounce {
@@ -235,24 +222,20 @@
   <!-- HERO -->
   <section class="hero">
 
-    <span class="sticker s1">⭐</span>
+    <span class="sticker s1">🎥</span>
     <span class="sticker s2">💬</span>
-    <span class="sticker s3">🩷</span>
+    <span class="sticker s3">🖥️</span>
     <span class="sticker s4">🌀</span>
     <span class="sticker s5">✨</span>
-
-    <div class="hero-badge">🎬 Video Editor · Gom</div>
 
     <h1 class="hero-title">
       <span class="line1">the video edit</span>
       <span class="line2">for every creator</span>
     </h1>
 
-    <div class="hero-emoji">✨🐻✨</div>
-
     <div class="hero-buttons">
-      <a href="#" class="btn btn-secondary"><span class="dot"></span>작업물 보기</a>
-      <a href="#" class="btn btn-primary"><span class="dot"></span>문의하기</a>
+      <a href="#" class="btn"><span class="dot"></span>작업물 보기</a>
+      <a href="#" class="btn"><span class="dot"></span>문의하기</a>
     </div>
 
     <div class="scroll-hint">↓ scroll down ↓</div>
