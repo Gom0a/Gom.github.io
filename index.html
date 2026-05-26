@@ -48,7 +48,7 @@
       padding: 7px 18px !important; border-radius: 999px;
       border: 1.5px solid #222 !important;
       font-size: 0.95rem !important; font-family: 'Paperlogy', sans-serif !important;
-        font-weight: 500 !important;
+      font-weight: 400 !important;
       display: flex; align-items: center; gap: 8px; transition: background 0.2s;
     }
     .nav-btn:hover { background: #f5f5f5 !important; }
@@ -81,7 +81,7 @@
       display: inline-block; position: relative;
       font-family: 'Epilogue';
       font-size: clamp(4.5rem, 13vw, 11rem);
-        font-weight: 600;
+      font-weight: 300;
       letter-spacing: -5px; word-spacing: -10px;
       padding: 0 32px; margin: 0 -32px; z-index: 0;
     }
@@ -114,7 +114,7 @@
     }
     .btn {
       padding: 10px 24px; border-radius: 999px;
-      border: 1px solid #222; font-size: 1.2rem; font-weight: 500;
+      border: 1px solid #222; font-size: 1.2rem; font-weight: 400;
       font-family: 'Paperlogy', sans-serif; cursor: pointer;
       text-decoration: none; transition: transform 0.15s;
       display: flex; align-items: center; gap: 10px;
@@ -251,16 +251,10 @@
     }
     .about-stats {
       display: flex; justify-content: center;
-      align-items: flex-start;
-      gap: 0;
-      margin-bottom: 32px;
-      width: 100%;
+      align-items: flex-start; gap: 0;
+      margin-bottom: 32px; width: 100%;
     }
-    .about-stat {
-      display: flex; flex-direction: column;
-      align-items: center; gap: 6px;
-      flex: 1;
-    }
+    .about-stat { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
     .about-stat-num {
       font-family: 'PaperlogyBold', sans-serif;
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
@@ -272,31 +266,23 @@
     }
     .about-divider {
       width: 48px; height: 2px;
-      background: rgba(0,0,0,0.15);
-      margin: 0 auto 32px;
+      background: rgba(0,0,0,0.15); margin: 0 auto 32px;
     }
     .about-desc {
       font-family: 'Paperlogy', sans-serif;
       font-size: 1.1rem; color: #222;
       line-height: 2; margin-bottom: 40px;
     }
-    .about-desc .blue {
-      color: #0f78f5;
-      font-family: 'PaperlogyBold', sans-serif;
-    }
+    .about-desc .blue { color: #0f78f5; font-family: 'PaperlogyBold', sans-serif; }
     .about-content .btn {
-      background: #0f78f5; color: #fff;
-      border-color: #0f78f5;
+      background: #0f78f5; color: #fff; border-color: #0f78f5;
       display: inline-flex; margin: 0 auto;
     }
     .about-content .btn:hover { background: #0a5fc4; }
     .about-content .btn .dot { background: rgba(255,255,255,0.4); }
 
     /* ── VOICE ── */
-    .voice {
-      padding: 280px 48px;
-      background: #f8f8f8;
-    }
+    .voice { padding: 280px 48px 120px; background: #f8f8f8; }
     .voice-header { text-align: center; margin-bottom: 64px; }
     .voice-header-label {
       font-family: 'Paperlogy', sans-serif;
@@ -310,52 +296,130 @@
       color: #222; line-height: 1.3;
       font-weight: 300;
     }
-    .voice-title-bold {
-      font-family: 'PaperlogyBold', sans-serif;
-      font-weight: 500;
-    }
+    .voice-title-bold { font-family: 'PaperlogyBold', sans-serif; font-weight: 700; }
     .voice-grid {
       display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 24px; max-width: 1000px; margin: 0 auto;
     }
     .voice-card {
       background: #fff; border-radius: 20px;
-      border: 1.5px solid #e8e8e8;
-      padding: 32px;
+      border: 1.5px solid #e8e8e8; padding: 32px;
       display: flex; flex-direction: column; gap: 16px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     }
     .voice-card-top { display: flex; align-items: flex-start; gap: 16px; }
     .voice-card-top img {
-      width: 72px; height: 72px; border-radius: 0%;
-      object-fit: cover; border: 0px solid #eee; flex-shrink: 0;
+      width: 72px; height: 72px; border-radius: 0;
+      object-fit: cover; border: none; flex-shrink: 0;
     }
     .voice-bubble {
       position: relative; background: #f5f5f5;
-      border-radius: 0 16px 16px 16px;
-      padding: 14px 18px; flex: 1;
+      border-radius: 0 16px 16px 16px; padding: 14px 18px; flex: 1;
     }
     .voice-bubble::before {
-      content: ''; position: absolute;
-      left: -10px; top: 14px;
-      border: 6px solid transparent;
-      border-right-color: #f5f5f5;
+      content: ''; position: absolute; left: -10px; top: 14px;
+      border: 6px solid transparent; border-right-color: #f5f5f5;
     }
     .voice-bubble-text {
-      font-family: 'PaperlogyBold', sans-serif;
+      font-family: 'PaperlogySemiBold', sans-serif;
       font-size: 1rem; color: #222; line-height: 1.6;
-      font-weight: 500;
     }
     .voice-card-info {
       font-family: 'Paperlogy', sans-serif;
-      font-size: 0.82rem; color: #999;
-      padding-left: 72px;
+      font-size: 0.82rem; color: #999; padding-left: 88px;
     }
     .voice-card-body {
       font-family: 'Paperlogy', sans-serif;
-      font-size: 0.95rem; color: #555;
-      line-height: 1.75; padding-left: 72px;
+      font-size: 0.95rem; color: #555; line-height: 1.75; padding-left: 88px;
     }
+
+    /* ── CHANNELS ── */
+    .channels {
+      padding: 120px 48px;
+      background: #ffffff;
+    }
+    .channels-header { text-align: center; margin-bottom: 64px; }
+    .channels-header-label {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 6px; color: #aaa;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .channels-header-title {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: #222; line-height: 1.3;
+    }
+    .channels-carousel-wrapper {
+      display: flex; align-items: center;
+      gap: 20px; justify-content: center;
+    }
+    .channels-track-container {
+      overflow: hidden; width: 100%; max-width: 1400px;
+    }
+    .channels-track {
+      display: flex; gap: 24px;
+      transition: transform 0.4s ease; will-change: transform;
+    }
+    .ch-card {
+      min-width: 260px; max-width: 260px;
+      background: #fff;
+      border-radius: 20px;
+      border: 1.5px solid #e0eeff;
+      padding: 32px 24px 24px;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 0 24px rgba(15,120,245,0.13);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ch-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 36px rgba(15,120,245,0.22);
+    }
+    .ch-card-img-wrap {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      border: 2px solid #0f78f5;
+      overflow: hidden;
+      box-shadow: 0 0 0 4px rgba(15,120,245,0.12);
+    }
+    .ch-card-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .ch-card-name {
+      font-family: 'PaperlogyBold', sans-serif;
+      font-size: 1rem; color: #0f78f5;
+      text-align: center; line-height: 1.4;
+    }
+    .ch-card-desc {
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.85rem; color: #333;
+      text-align: center; line-height: 1.7;
+      display: -webkit-box; -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+      flex: 1;
+    }
+    .ch-card-btn {
+      margin-top: auto;
+      display: inline-block;
+      font-family: 'Paperlogy', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      color: #222; background: #fff;
+      border: 1.5px solid #222;
+      border-radius: 999px;
+      padding: 7px 20px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .ch-card-btn:hover { background: #f5f5f5; transform: translate(-2px,-2px); }
+    .channels-btn {
+      background: #fff; border: 2px solid #222;
+      border-radius: 50%; width: 52px; height: 52px;
+      font-size: 1.4rem; cursor: pointer; flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .channels-btn:hover { background: #f5f5f5; }
   </style>
 </head>
 <body>
@@ -415,11 +479,8 @@
       <button class="carousel-btn" onclick="moveCarousel(-1)">&#8592;</button>
       <div class="carousel-track-container">
         <div class="carousel-track" id="carouselTrack">
-
           <div class="card" style="--card-color:#ffa8a8;">
-            <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank">
-              <img src="https://img.youtube.com/vi/D0BetwBIgXc/maxresdefault.jpg" alt="저스트채팅 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank"><img src="https://img.youtube.com/vi/D0BetwBIgXc/maxresdefault.jpg" alt="저스트채팅 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#저스트 채팅</p>
               <p class="card-views">👁 2만회</p>
@@ -427,11 +488,8 @@
               <a href="https://www.youtube.com/watch?v=D0BetwBIgXc" target="_blank" class="card-channel">위도 W2RDØ</a>
             </div>
           </div>
-
           <div class="card" style="--card-color:#fff0a8;">
-            <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank">
-              <img src="https://img.youtube.com/vi/k-bZ1K3otFA/maxresdefault.jpg" alt="다인합방 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank"><img src="https://img.youtube.com/vi/k-bZ1K3otFA/maxresdefault.jpg" alt="다인합방 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#다인합방</p>
               <p class="card-views">👁 1.3만회</p>
@@ -439,11 +497,8 @@
               <a href="https://www.youtube.com/watch?v=k-bZ1K3otFA" target="_blank" class="card-channel">클로이 chlo2</a>
             </div>
           </div>
-
           <div class="card" style="--card-color:#c8e488;">
-            <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank">
-              <img src="https://img.youtube.com/vi/ty8KTgeQzcU/maxresdefault.jpg" alt="게임 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank"><img src="https://img.youtube.com/vi/ty8KTgeQzcU/maxresdefault.jpg" alt="게임 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#게임</p>
               <p class="card-views">👁 55만회</p>
@@ -451,11 +506,8 @@
               <a href="https://www.youtube.com/watch?v=ty8KTgeQzcU" target="_blank" class="card-channel">김블루</a>
             </div>
           </div>
-
           <div class="card" style="--card-color:#a8dcff;">
-            <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank">
-              <img src="https://img.youtube.com/vi/KDm95KaLxQM/maxresdefault.jpg" alt="뷰티 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank"><img src="https://img.youtube.com/vi/KDm95KaLxQM/maxresdefault.jpg" alt="뷰티 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#뷰티</p>
               <p class="card-views">👁 5.7천회</p>
@@ -463,11 +515,8 @@
               <a href="https://www.youtube.com/watch?v=KDm95KaLxQM" target="_blank" class="card-channel">율럽Yulluv</a>
             </div>
           </div>
-
           <div class="card" style="--card-color:#ffbce3;">
-            <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank">
-              <img src="https://img.youtube.com/vi/GeEd5AlVh4g/maxresdefault.jpg" alt="브이로그 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank"><img src="https://img.youtube.com/vi/GeEd5AlVh4g/maxresdefault.jpg" alt="브이로그 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#브이로그</p>
               <p class="card-views">👁 1.6만회</p>
@@ -475,11 +524,8 @@
               <a href="https://www.youtube.com/watch?v=GeEd5AlVh4g" target="_blank" class="card-channel">율럽Yulluv</a>
             </div>
           </div>
-
           <div class="card" style="--card-color:#ffa8a8;">
-            <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank">
-              <img src="https://img.youtube.com/vi/49UXx1JLTgk/maxresdefault.jpg" alt="병원 영상 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank"><img src="https://img.youtube.com/vi/49UXx1JLTgk/maxresdefault.jpg" alt="병원 영상 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#병원 영상</p>
               <p class="card-views">👁 183회</p>
@@ -487,11 +533,8 @@
               <a href="https://www.youtube.com/watch?v=49UXx1JLTgk" target="_blank" class="card-channel">벨포인트의원</a>
             </div>
           </div>
-
           <div class="card" style="--card-color:#fff0a8;">
-            <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank">
-              <img src="https://img.youtube.com/vi/T2DrU-Edbxo/maxresdefault.jpg" alt="정보성 영상 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank"><img src="https://img.youtube.com/vi/T2DrU-Edbxo/maxresdefault.jpg" alt="정보성 영상 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#정보성 영상</p>
               <p class="card-views">👁 28만회</p>
@@ -499,11 +542,8 @@
               <a href="https://www.youtube.com/watch?v=T2DrU-Edbxo" target="_blank" class="card-channel">원더굿라이프</a>
             </div>
           </div>
-
           <div class="card" style="--card-color:#c8e488;">
-            <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank">
-              <img src="https://img.youtube.com/vi/qtDHUvDpgzI/maxresdefault.jpg" alt="상업 영상 썸네일">
-            </a>
+            <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank"><img src="https://img.youtube.com/vi/qtDHUvDpgzI/maxresdefault.jpg" alt="상업 영상 썸네일"></a>
             <div class="card-body">
               <p class="card-tag">#상업 영상</p>
               <p class="card-views">👁 5.2만회</p>
@@ -511,7 +551,6 @@
               <a href="https://www.youtube.com/watch?v=qtDHUvDpgzI" target="_blank" class="card-channel">이게오네</a>
             </div>
           </div>
-
         </div>
       </div>
       <button class="carousel-btn" onclick="moveCarousel(1)">&#8594;</button>
@@ -557,86 +596,242 @@
       </h2>
     </div>
     <div class="voice-grid">
-
       <div class="voice-card">
         <div class="voice-card-top">
-          <img src="face1.png" alt="린린">
+          <img src="face1.png" alt="뚜뚜">
           <div class="voice-bubble">
             <p class="voice-bubble-text">"어떤 편집 스타일로 맡겨야 할지 모르겠어요."</p>
           </div>
         </div>
-        <p class="voice-card-info">여**가보민 · 유튜브 운영 1년차</p>
+        <p class="voice-card-info">뚜뚜 · 유튜브 운영 1년차</p>
         <p class="voice-card-body">레퍼런스를 찾아봐도 내 채널이랑 맞는 스타일인지 확신이 없고, 편집자한테 어떻게 설명해야 할지 막막했어요.</p>
       </div>
-
       <div class="voice-card">
         <div class="voice-card-top">
-          <img src="face2.png" alt="소리">
+          <img src="face2.png" alt="카나">
           <div class="voice-bubble">
             <p class="voice-bubble-text">"편집 맡기고 싶은데 믿을 수 있을지 걱정됐어요."</p>
           </div>
         </div>
-        <p class="voice-card-info">델***쥬Pick · 유튜브 운영 3년차</p>
+        <p class="voice-card-info">카나 · 유튜브 운영 3년차</p>
         <p class="voice-card-body">결과물이 마음에 안 들면 어떡하지, 소통이 잘 안 되면 어떡하지 하는 불안감이 컸는데 생각보다 훨씬 꼼꼼하게 챙겨줬어요.</p>
       </div>
-
       <div class="voice-card">
         <div class="voice-card-top">
-          <img src="face3.png" alt="지니">
+          <img src="face3.png" alt="하리">
           <div class="voice-bubble">
             <p class="voice-bubble-text">"내 채널 분위기를 잘 살려줄 수 있을지 불안했어요."</p>
           </div>
         </div>
-        <p class="voice-card-info">안* · 버츄얼 스트리머</p>
+        <p class="voice-card-info">하리 · 버츄얼 스트리머</p>
         <p class="voice-card-body">캐릭터 색깔이 강한 채널이라 편집 톤 맞추기가 어렵다고 생각했는데, 몇 번 소통하고 나니 제가 원하는 방향을 딱 잡아줬어요.</p>
       </div>
-
       <div class="voice-card">
         <div class="voice-card-top">
-          <img src="face4.png" alt="세이">
+          <img src="face4.png" alt="루나">
           <div class="voice-bubble">
             <p class="voice-bubble-text">"소통이 잘 될지 불안했어요."</p>
           </div>
         </div>
-        <p class="voice-card-info">키*KiKK** · 뷰티 유튜버</p>
+        <p class="voice-card-info">루나 · 뷰티 유튜버</p>
         <p class="voice-card-body">수정 사항이 생겨도 부담 없이 말할 수 있는 분위기가 좋았어요. 빠른 피드백 덕분에 업로드 일정도 한 번도 안 밀렸어요.</p>
       </div>
+    </div>
+  </section>
 
+  <!-- ── CHANNELS ── -->
+  <section class="channels">
+    <div class="channels-header">
+      <p class="channels-header-label">Clients</p>
+      <h2 class="channels-header-title">함께한 채널들</h2>
+    </div>
+    <div class="channels-carousel-wrapper">
+      <button class="channels-btn" onclick="moveChannels(-1)">&#8592;</button>
+      <div class="channels-track-container">
+        <div class="channels-track" id="channelsTrack">
+
+          <!-- 1. 김블루 224만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="김블루.png" alt="김블루"></div>
+            <p class="ch-card-name">김블루</p>
+            <p class="ch-card-desc">안녕하세요 김블루입니다. 제 영상을 볼 때만큼은 우리 쁠몬들이 항상 즐거웠으면 좋겠습니다!</p>
+            <a href="https://www.youtube.com/@김블루님" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 2. 안케 147만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="안케.png" alt="안케"></div>
+            <p class="ch-card-name">AnKe Ch. 안케</p>
+            <p class="ch-card-desc">디저트 왕국에서 온 버터 팬케이크의 요정이었으나 현재는 대한민국 서울에서 그림 그리고 노래하는 안케입니다!</p>
+            <a href="https://www.youtube.com/@lily_anke_" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 3. 율럽 152만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="율럽.png" alt="율럽Yulluv"></div>
+            <p class="ch-card-name">율럽Yulluv</p>
+            <p class="ch-card-desc">명품, 패션, 뷰티, 일상 함께 나눠용❤️</p>
+            <a href="https://www.youtube.com/@yulluv" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 4. 하루토 30만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="하루토.png" alt="하루토"></div>
+            <p class="ch-card-name">하루토 【싸이코드】</p>
+            <p class="ch-card-desc">버츄얼 예능팀 싸이코드(Psychord)의 하루토입니다. 소통과 노래 부르는 걸 좋아합니다!</p>
+            <a href="https://www.youtube.com/@psy_haruto" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 5. 로트키 23.7만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="로트키.png" alt="로트키"></div>
+            <p class="ch-card-name">로트키</p>
+            <p class="ch-card-desc">구독 눌러주실래요? *로트키 채널의 대부분의 영상은 연출이 포함되어 있습니다!*</p>
+            <a href="https://www.youtube.com/@로트키" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 6. 모양몬 21.4만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="모양몬.png" alt="모양몬 로블록스"></div>
+            <p class="ch-card-name">모양몬 로블록스</p>
+            <p class="ch-card-desc">모양몬 로블록스 채널입니다!</p>
+            <a href="https://www.youtube.com/@모양몬로블록스" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 7. 원더굿라이프 7.3만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="원더굿라이프.png" alt="원더굿라이프"></div>
+            <p class="ch-card-name">원더굿라이프</p>
+            <p class="ch-card-desc">안녕하세요. 신차구입 플랫폼 원더굿라이프입니다^^. 연락주시면 감사하겠습니다^^</p>
+            <a href="https://www.youtube.com/@WonderGoodLife" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 8. 위도 2.88만 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="위도.png" alt="위도 W2RDØ"></div>
+            <p class="ch-card-name">위도 W2RDØ</p>
+            <p class="ch-card-desc">바다를 사랑하는 세이렌, 위도입니다🌊🫧 매주 화, 금 업로드</p>
+            <a href="https://www.youtube.com/@위도" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 9. 하디아 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="하디아.png" alt="하디아"></div>
+            <p class="ch-card-name">하디아</p>
+            <p class="ch-card-desc">요구르트 버튜버 하디아입니다!! ✨ 항상 감사합니다 +ㅅ+</p>
+            <a href="https://www.youtube.com/@hadia_" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 10. 크루즈TMK -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="크루즈.png" alt="CruiseTMK"></div>
+            <p class="ch-card-name">CruiseTMK</p>
+            <p class="ch-card-desc">글로벌 크루즈 예약 플랫폼. 26년간 크루즈 전문성을 쌓아온 (주)투어마케팅코리아가 운영합니다.</p>
+            <a href="https://www.youtube.com/@CruiseTMK" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 11. CCL -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="CCL.png" alt="CCL Culture Capital"></div>
+            <p class="ch-card-name">CCL Culture Capital LLC</p>
+            <p class="ch-card-desc">해외선물 거래소 CCL 컬쳐캐피탈입니다. 궁금하신 사항은 언제든 문의해 주세요!</p>
+            <a href="https://www.youtube.com/@CCL-CultureCapital" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 12. 김영감 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="김영감의세포이야기.png" alt="김영감의 줄기세포 이야기"></div>
+            <p class="ch-card-name">김영감의 줄기세포 이야기</p>
+            <p class="ch-card-desc">줄기세포 외길인생 16년, 논문 읽어주는 의사 '김영감'입니다. 건강한 젊음을 되찾고 싶다면 구독하세요!</p>
+            <a href="https://www.youtube.com/@midasstemcell" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 13. 꼼꼼닥터 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="꼼꼼닥터.png" alt="꼼꼼닥터 박정렬"></div>
+            <p class="ch-card-name">꼼꼼닥터 박정렬</p>
+            <p class="ch-card-desc">눈밑·눈위꺼짐필러 / 풀페이스필러 / 실리프팅 / 흉터치료. 과잉없이 소신대로 진료합니다.</p>
+            <a href="https://www.youtube.com/@bellepoint_clinic" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 14. 백팔십도 180한의원 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="백팔십도.png" alt="백팔십도 180한의원"></div>
+            <p class="ch-card-name">백팔십도, 180한의원</p>
+            <p class="ch-card-desc">안면비대칭, 체질다이어트 전문</p>
+            <a href="https://www.youtube.com/@180clinic" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 15. 수현의맛 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="수현의맛.png" alt="수현의맛"></div>
+            <p class="ch-card-name">수현의맛 Soohyun's Taste</p>
+            <p class="ch-card-desc">안녕하세요 김수현입니다! 요리, 맛집, 라이프스타일을 함께 나눠요.</p>
+            <a href="https://www.youtube.com/@soohyunstaste1032" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 16. 간단한상 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="간단한상.png" alt="간단한상"></div>
+            <p class="ch-card-name">간단한상</p>
+            <p class="ch-card-desc">바쁜 하루 속에서도 맛있는 한 끼! 요리 초보자부터 자취생까지 누구나 따라 할 수 있는 레시피 채널</p>
+            <a href="https://www.youtube.com/@onedining-k" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+          <!-- 17. 웰홈톡 -->
+          <div class="ch-card">
+            <div class="ch-card-img-wrap"><img src="웰홈톡.png" alt="웰홈톡"></div>
+            <p class="ch-card-name">웰홈톡 (대영이엠씨)</p>
+            <p class="ch-card-desc">믿고 맡길 수 있는 30년 전통의 기술력. 단독주택 리모델링 전문 채널입니다.</p>
+            <a href="https://www.youtube.com/@okemc" target="_blank" class="ch-card-btn">채널 방문하기</a>
+          </div>
+
+        </div>
+      </div>
+      <button class="channels-btn" onclick="moveChannels(1)">&#8594;</button>
     </div>
   </section>
 
   <script>
-    // ── CAROUSEL ──
+    // ── WORKS 캐러셀 ──
     const track = document.getElementById('carouselTrack');
-    const GAP = 24;
-    const CARD_WIDTH = 500;
-    const STEP = CARD_WIDTH + GAP;
+    const GAP = 24, CARD_WIDTH = 500, STEP = CARD_WIDTH + GAP;
     const originalCards = Array.from(track.children);
     const total = originalCards.length;
-
     originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
     originalCards.forEach(card => track.insertBefore(card.cloneNode(true), track.firstChild));
-
     let currentIndex = total;
     track.style.transition = 'none';
     track.style.transform = `translateX(-${currentIndex * STEP}px)`;
-
     function moveCarousel(dir) {
       currentIndex += dir;
       track.style.transition = 'transform 0.4s ease';
       track.style.transform = `translateX(-${currentIndex * STEP}px)`;
       track.addEventListener('transitionend', function onEnd() {
         track.removeEventListener('transitionend', onEnd);
-        if (currentIndex >= total * 2) {
-          currentIndex = total;
-          track.style.transition = 'none';
-          track.style.transform = `translateX(-${currentIndex * STEP}px)`;
-        }
-        if (currentIndex < total) {
-          currentIndex = total * 2 - 1;
-          track.style.transition = 'none';
-          track.style.transform = `translateX(-${currentIndex * STEP}px)`;
-        }
+        if (currentIndex >= total * 2) { currentIndex = total; track.style.transition = 'none'; track.style.transform = `translateX(-${currentIndex * STEP}px)`; }
+        if (currentIndex < total) { currentIndex = total * 2 - 1; track.style.transition = 'none'; track.style.transform = `translateX(-${currentIndex * STEP}px)`; }
+      });
+    }
+
+    // ── CHANNELS 캐러셀 ──
+    const chTrack = document.getElementById('channelsTrack');
+    const CH_GAP = 24, CH_WIDTH = 260, CH_STEP = CH_WIDTH + CH_GAP;
+    const origCh = Array.from(chTrack.children);
+    const chTotal = origCh.length;
+    origCh.forEach(c => chTrack.appendChild(c.cloneNode(true)));
+    origCh.forEach(c => chTrack.insertBefore(c.cloneNode(true), chTrack.firstChild));
+    let chIndex = chTotal;
+    chTrack.style.transition = 'none';
+    chTrack.style.transform = `translateX(-${chIndex * CH_STEP}px)`;
+    function moveChannels(dir) {
+      chIndex += dir;
+      chTrack.style.transition = 'transform 0.4s ease';
+      chTrack.style.transform = `translateX(-${chIndex * CH_STEP}px)`;
+      chTrack.addEventListener('transitionend', function onEnd() {
+        chTrack.removeEventListener('transitionend', onEnd);
+        if (chIndex >= chTotal * 2) { chIndex = chTotal; chTrack.style.transition = 'none'; chTrack.style.transform = `translateX(-${chIndex * CH_STEP}px)`; }
+        if (chIndex < chTotal) { chIndex = chTotal * 2 - 1; chTrack.style.transition = 'none'; chTrack.style.transform = `translateX(-${chIndex * CH_STEP}px)`; }
       });
     }
 
@@ -646,12 +841,8 @@
     window.addEventListener('scroll', () => {
       if (!aboutCollage) return;
       const rect = aboutCollage.getBoundingClientRect();
-      const wh = window.innerHeight;
-      if (rect.top < wh * 0.6) {
-        aboutContent.classList.add('visible');
-      } else {
-        aboutContent.classList.remove('visible');
-      }
+      if (rect.top < window.innerHeight * 0.6) { aboutContent.classList.add('visible'); }
+      else { aboutContent.classList.remove('visible'); }
     });
   </script>
 
